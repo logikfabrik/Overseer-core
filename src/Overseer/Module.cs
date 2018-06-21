@@ -2,17 +2,17 @@
 // Copyright (c) anton(at)logikfabrik.se. Licensed under the MIT license.
 // </copyright>
 
-using Overseer.Common.Infrastructure;
-using Overseer.Framework.Xml.Serialization;
-
 namespace Overseer
 {
     using Domain.Model.Builds;
     using Domain.Model.Connections;
     using Domain.Model.ConnectionSettings;
     using Domain.Model.Projects;
+    using Framework.IO;
+    using Framework.Xml.Serialization;
     using Infrastructure;
     using Ninject.Modules;
+    using Overseer.Common.Infrastructure;
 
     /// <summary>
     /// Module that defines domain specific bindings.
@@ -23,6 +23,8 @@ namespace Overseer
         /// <inheritdoc />
         public override void Load()
         {
+            Bind<IFileSystem>().To<FileSystem>();
+
             Bind<XmlSerializer<ConnectionSettingDto>>().ToProvider<ConnectionSettingDtoXmlSerializerProvider>();
 
             Bind<IBuildRepository>().To<BuildRepository>().InSingletonScope();

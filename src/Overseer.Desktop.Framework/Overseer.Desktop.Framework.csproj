@@ -1,27 +1,18 @@
 <Project Sdk="Microsoft.NET.Sdk">
-  
+
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
   
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>bin\Release\netcoreapp2.0\Overseer.Desktop.Service.AppVeyor.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\netcoreapp2.0\Overseer.Desktop.Framework.xml</DocumentationFile>
 	<NoWarn>1701;1702;1705;SA1101;SA1309</NoWarn>
   </PropertyGroup>
   
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>bin\Debug\netcoreapp2.0\Overseer.Desktop.Service.AppVeyor.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\netcoreapp2.0\Overseer.Desktop.Framework.xml</DocumentationFile>
 	<NoWarn>1701;1702;1705;SA1101;SA1309</NoWarn>
   </PropertyGroup>
-  
-  <ItemGroup>
-    <Compile Update="**\*.xaml.cs">
-      <DependentUpon>%(Filename)</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="**\*.xaml">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
   
   <ItemGroup>
     <None Remove="stylecop.json" />
@@ -38,15 +29,6 @@
     <PackageReference Include="EnsureThatCore" Version="1.0.0" />
     <PackageReference Include="Ninject" Version="3.3.4" />
     <PackageReference Include="StyleCop.Analyzers" Version="1.0.2" />
-  </ItemGroup>
-  
-  <ItemGroup>
-    <ProjectReference Include="..\Overseer.Desktop.Common\Overseer.Desktop.Common.csproj" />
-    <ProjectReference Include="..\Overseer.Service.AppVeyor\Overseer.Service.AppVeyor.csproj" />
-  </ItemGroup>
-  
-  <ItemGroup>
-    <Folder Include="ViewModels\" />
   </ItemGroup>
   
 </Project>

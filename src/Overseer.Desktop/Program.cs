@@ -1,22 +1,52 @@
-﻿using System;
-using Avalonia;
-using Avalonia.Logging.Serilog;
-using Overseer.Desktop.ViewModels;
-using Overseer.Desktop.Views;
+﻿// <copyright file="Program.cs" company="Logikfabrik">
+// Copyright (c) anton(at)logikfabrik.se. Licensed under the MIT license.
+// </copyright>
 
 namespace Overseer.Desktop
 {
-    class Program
+    using Avalonia;
+    using Avalonia.Logging.Serilog;
+    using Ninject;
+    using Splat;
+    using ViewModels;
+    using Views;
+
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            BuildAvaloniaApp().Start<MainWindow>(() => new MainWindowViewModel());
+            Locator.Current = GetResolver();
+
+            var appBuilder = BuildAvaloniaApp();
+
+            appBuilder.Start<MainWindow>(() => Locator.Current.GetService<MainWindowViewModel>());
         }
 
-        public static AppBuilder BuildAvaloniaApp()
-            => AppBuilder.Configure<App>()
+        private static AppBuilder BuildAvaloniaApp()
+        {
+            return AppBuilder.Configure<App>()
                 .UsePlatformDetect()
                 .UseReactiveUI()
                 .LogToDebug();
+        }
+
+        private static FuncDependencyResolver GetResolver()
+        {
+            var kernel = new StandardKernel();
+
+            kernel.Load("Overseer*.dll");
+
+            return new FuncDependencyResolver(
+                (service, contract) => contract != null ? kernel.GetAll(service, contract) : kernel.GetAll(service),
+                (factory, service, contract) =>
+                {
+                    var binding = kernel.Bind(service).ToMethod(_ => factory());
+
+                    if (contract != null)
+                    {
+                        binding.Named(contract);
+                    }
+                });
+        }
     }
 }

@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <PackageReference Include="EnsureThatCore" Version="1.0.0" />
+    <PackageReference Include="Ninject" Version="3.3.4" />
     <PackageReference Include="StyleCop.Analyzers" Version="1.0.2" />
   </ItemGroup>
 

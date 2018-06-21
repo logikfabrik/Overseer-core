@@ -5,7 +5,7 @@
 namespace Overseer.Framework.IO
 {
     /// <summary>
-    /// Represents a file system with limited functionality.
+    /// Represents the file system.
     /// </summary>
     public interface IFileSystem
     {
