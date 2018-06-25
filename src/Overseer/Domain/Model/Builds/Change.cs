@@ -111,7 +111,7 @@ namespace Overseer.Domain.Model.Builds
         /// <inheritdoc />
         public override int GetHashCode()
         {
-            return HashCodeUtility.GetHashCode(new object[] { Id, ChangeTime, ChangedBy, Message });
+            return HashCode.Generate(new object[] { Id, ChangeTime, ChangedBy, Message });
         }
     }
 }

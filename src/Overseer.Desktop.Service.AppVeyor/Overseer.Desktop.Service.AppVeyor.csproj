@@ -25,6 +25,7 @@
   
   <ItemGroup>
     <None Remove="stylecop.json" />
+    <None Remove="Views\CreateConnectionSettingView.xaml" />
   </ItemGroup>
   
   <ItemGroup>
@@ -43,10 +44,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Overseer.Desktop.Common\Overseer.Desktop.Common.csproj" />
     <ProjectReference Include="..\Overseer.Service.AppVeyor\Overseer.Service.AppVeyor.csproj" />
-  </ItemGroup>
-  
-  <ItemGroup>
-    <Folder Include="ViewModels\" />
   </ItemGroup>
   
 </Project>

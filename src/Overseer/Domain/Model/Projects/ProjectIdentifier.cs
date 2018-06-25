@@ -84,7 +84,7 @@ namespace Overseer.Domain.Model.Projects
         /// <inheritdoc />
         public override int GetHashCode()
         {
-            return HashCodeUtility.GetHashCode(new[] { ConnectionId, ProjectId });
+            return HashCode.Generate(new[] { ConnectionId, ProjectId });
         }
     }
 }

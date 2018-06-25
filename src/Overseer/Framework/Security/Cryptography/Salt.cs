@@ -16,7 +16,7 @@ namespace Overseer.Framework.Security.Cryptography
         /// Generates a salt of the specified size.
         /// </summary>
         /// <param name="size">The size, in bytes, of the salt to generate.</param>
-        /// <returns>A salt.</returns>
+        /// <returns>The generated salt.</returns>
         public static byte[] Generate(int size)
         {
             EnsureArg.Is(size % 8, 0, nameof(size));

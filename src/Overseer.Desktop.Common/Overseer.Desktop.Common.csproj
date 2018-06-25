@@ -42,6 +42,7 @@
   
   <ItemGroup>
     <ProjectReference Include="..\Overseer.Desktop.Framework\Overseer.Desktop.Framework.csproj" />
+    <ProjectReference Include="..\Overseer\Overseer.csproj" />
   </ItemGroup>
   
 </Project>

@@ -15,10 +15,10 @@ namespace Overseer.Framework.Security.Cryptography
         /// <summary>
         /// Generates a hash of the specified password.
         /// </summary>
-        /// <param name="password">The password to hash.</param>
+        /// <param name="password">The password.</param>
         /// <param name="salt">The salt to use when generating the hash.</param>
         /// <param name="size">The size, in bytes, of the hash to generate.</param>
-        /// <returns>A hash.</returns>
+        /// <returns>The generated hash.</returns>
         public static byte[] Generate(string password, byte[] salt, int size)
         {
             EnsureArg.IsNotNull(password);
