@@ -8,6 +8,7 @@ namespace Overseer.Common.Domain.Model
     /// Represents an entity.
     /// </summary>
     /// <typeparam name="TIdentifier">The identifier type.</typeparam>
+    /// <remarks>This interface has intentionally been made public.</remarks>
     public interface IEntity<out TIdentifier>
     {
         /// <summary>

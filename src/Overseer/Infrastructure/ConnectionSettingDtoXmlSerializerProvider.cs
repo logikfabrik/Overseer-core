@@ -11,7 +11,7 @@ namespace Overseer.Infrastructure
     using Ninject.Activation;
     using Overseer.Common.Infrastructure;
 
-    public sealed class ConnectionSettingDtoXmlSerializerProvider : Provider<XmlSerializer<ConnectionSettingDto>>
+    internal sealed class ConnectionSettingDtoXmlSerializerProvider : Provider<XmlSerializer<ConnectionSettingDto>>
     {
         private readonly AppDomain _appDomain;
 

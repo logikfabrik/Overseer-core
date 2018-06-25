@@ -7,6 +7,7 @@ namespace Overseer.Common.Domain.Model
     /// <summary>
     /// Represents a message, which forms the base for both events and commands.
     /// </summary>
+    /// <remarks>This interface has intentionally been made public.</remarks>
     public interface IMessage
     {
     }

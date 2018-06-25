@@ -9,6 +9,7 @@ namespace Overseer.Common.Domain.Model
     /// </summary>
     /// <typeparam name="TEntity">The entity type.</typeparam>
     /// <typeparam name="TIdentifier">The identifier type.</typeparam>
+    /// <remarks>This class has intentionally been made public.</remarks>
     // ReSharper disable once InheritdocConsiderUsage
     public abstract class Event<TEntity, TIdentifier> : IEvent
         where TEntity : IEntity<TIdentifier>

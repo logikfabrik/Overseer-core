@@ -10,6 +10,7 @@ namespace Overseer.Domain.Model.ConnectionSettings
     /// <summary>
     /// Event to be published when a connection setting is changed.
     /// </summary>
+    /// <remarks>This class has intentionally been made public.</remarks>
     // ReSharper disable once InheritdocConsiderUsage
     public sealed class ConnectionSettingChanged : Event<ConnectionSetting, Guid>
     {

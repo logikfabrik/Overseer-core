@@ -6,6 +6,10 @@ namespace Overseer.Common.Domain.Model
 {
     using System;
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <remarks>This class has intentionally been made public.</remarks>
     public static class MessageBus
     {
         public static void Publish<TMessage>(TMessage message)

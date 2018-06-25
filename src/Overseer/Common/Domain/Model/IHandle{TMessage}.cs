@@ -8,6 +8,7 @@ namespace Overseer.Common.Domain.Model
     /// Represents a handle for messages, both events and commands.
     /// </summary>
     /// <typeparam name="TMessage">The message type.</typeparam>
+    /// <remarks>This interface has intentionally been made public.</remarks>
     public interface IHandle<in TMessage>
         where TMessage : IMessage
     {

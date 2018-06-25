@@ -8,7 +8,7 @@ namespace Overseer.Desktop.Service.AppVeyor.ViewModels
     using Domain.Model.ConnectionSettings;
     using ReactiveUI;
 
-    public class CreateConnectionSettingViewModel : Common.ViewModels.CreateConnectionSettingViewModel
+    public sealed class CreateConnectionSettingViewModel : Common.ViewModels.CreateConnectionSettingViewModel
     {
         private string _token;
 

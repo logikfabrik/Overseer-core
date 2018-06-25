@@ -13,7 +13,7 @@ namespace Overseer.Infrastructure
     /// <summary>
     /// Selector for selecting a connection setting factory based on a specified connection setting DTO type.
     /// </summary>
-    public sealed class ConnectionSettingFactorySelector
+    internal sealed class ConnectionSettingFactorySelector
     {
         private readonly IDictionary<Type, IConnectionSettingFactory> _connectionSettingFactories;
 

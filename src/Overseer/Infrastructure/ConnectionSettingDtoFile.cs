@@ -9,7 +9,7 @@ namespace Overseer.Infrastructure
     using Framework.Xml.Serialization;
     using Overseer.Common.Infrastructure;
 
-    public class ConnectionSettingDtoFile
+    internal sealed class ConnectionSettingDtoFile
     {
         private readonly XmlSerializer<ConnectionSettingDto[]> _xmlSerializer;
         private readonly ITextFile _textFile;

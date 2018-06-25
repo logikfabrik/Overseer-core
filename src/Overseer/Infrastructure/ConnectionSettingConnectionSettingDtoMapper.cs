@@ -8,7 +8,7 @@ namespace Overseer.Infrastructure
     using EnsureThat;
     using Overseer.Common.Infrastructure;
 
-    public sealed class ConnectionSettingConnectionSettingDtoMapper
+    internal sealed class ConnectionSettingConnectionSettingDtoMapper
     {
         private readonly ConnectionSettingFactorySelector _connectionSettingFactorySelector;
         private readonly ConnectionSettingDtoFactorySelector _connectionSettingDtoFactorySelector;
