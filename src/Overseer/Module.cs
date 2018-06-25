@@ -8,6 +8,7 @@ namespace Overseer
     using Domain.Model.Connections;
     using Domain.Model.ConnectionSettings;
     using Domain.Model.Projects;
+    using Domain.Model.Services;
     using Framework.IO;
     using Framework.Xml.Serialization;
     using Infrastructure;
@@ -15,7 +16,7 @@ namespace Overseer
     using Overseer.Common.Infrastructure;
 
     /// <summary>
-    /// Module that defines domain specific bindings.
+    /// Module that defines bindings.
     /// </summary>
     // ReSharper disable once InheritdocConsiderUsage
     public sealed class Module : NinjectModule
@@ -31,6 +32,7 @@ namespace Overseer
             Bind<IConnectionRepository>().To<ConnectionRepository>().InSingletonScope();
             Bind<IConnectionSettingRepository>().To<ConnectionSettingRepository>().InSingletonScope();
             Bind<IProjectRepository>().To<ProjectRepository>().InSingletonScope();
+            Bind<IServiceRepository>().To<ServiceRepository>().InSingletonScope();
         }
     }
 }

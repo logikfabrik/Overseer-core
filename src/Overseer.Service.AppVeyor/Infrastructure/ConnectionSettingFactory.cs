@@ -27,6 +27,8 @@ namespace Overseer.Service.AppVeyor.Infrastructure
 
             return ConnectionSetting.Create(
                 csdto.Id,
+                csdto.ServiceId,
+                csdto.Name,
                 Overseer.Domain.Model.ConnectionSettings.ProjectSetting.Create(csdto.ProjectSetting.FilterBy),
                 Overseer.Domain.Model.ConnectionSettings.BuildSetting.Create(csdto.BuildSetting.Take),
                 csdto.Token);

@@ -4,7 +4,9 @@
 
 namespace Overseer.Desktop.Common.ViewModels
 {
+    using System;
     using System.Collections.Generic;
+    using EnsureThat;
     using ReactiveUI;
 
     public abstract class CreateConnectionSettingViewModel : ViewModelBase
@@ -16,10 +18,22 @@ namespace Overseer.Desktop.Common.ViewModels
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateConnectionSettingViewModel" /> class.
         /// </summary>
-        protected CreateConnectionSettingViewModel()
+        /// <param name="serviceId">The CI/CD service identifier.</param>
+        protected CreateConnectionSettingViewModel(Guid serviceId)
         {
+            EnsureArg.IsNotEmpty(serviceId);
+
+            ServiceId = serviceId;
             Save = ReactiveCommand.Create(Create);
         }
+
+        /// <summary>
+        /// Gets the CI/CD service identifier.
+        /// </summary>
+        /// <value>
+        /// The CI/CD service identifier.
+        /// </value>
+        public Guid ServiceId { get;  }
 
         /// <summary>
         /// Gets or sets the name.

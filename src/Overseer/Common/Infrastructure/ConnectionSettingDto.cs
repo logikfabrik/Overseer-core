@@ -20,6 +20,14 @@ namespace Overseer.Common.Infrastructure
         public Guid Id { get; set; }
 
         /// <summary>
+        /// Gets or sets the CI/CD service identifier.
+        /// </summary>
+        /// <value>
+        /// The CI/CD service identifier.
+        /// </value>
+        public Guid ServiceId { get; set; }
+
+        /// <summary>
         /// Gets or sets the name.
         /// </summary>
         /// <value>

@@ -10,19 +10,22 @@ namespace Overseer.Desktop
     using Overseer.Desktop.Common.ViewModels;
     using Splat;
 
+    /// <summary>
+    /// A template for locating and building views for view models.
+    /// </summary>
+    // ReSharper disable once InheritdocConsiderUsage
     public class ViewLocator : IDataTemplate
     {
         /// <inheritdoc />
         public bool SupportsRecycling => false;
 
         /// <inheritdoc />
-        public IControl Build(object viewModel)
+        public IControl Build(object data)
         {
-            var viewModelType = viewModel.GetType();
+            var viewModelType = data.GetType();
             var viewModelTypeName = viewModelType.FullName;
 
             var viewTypeAssemblyQualifiedName = viewModelType.AssemblyQualifiedName.Replace(viewModelTypeName, viewModelTypeName.Replace("ViewModel", "View"));
-
             var viewType = Type.GetType(viewTypeAssemblyQualifiedName);
 
             if (viewType != null)

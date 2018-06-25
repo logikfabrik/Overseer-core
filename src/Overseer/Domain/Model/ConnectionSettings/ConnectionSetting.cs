@@ -18,21 +18,34 @@ namespace Overseer.Domain.Model.ConnectionSettings
         /// Initializes a new instance of the <see cref="ConnectionSetting" /> class.
         /// </summary>
         /// <param name="id">The identifier.</param>
+        /// <param name="serviceId">The CI/CD service identifier.</param>
+        /// <param name="name">The name.</param>
         /// <param name="projectSetting">The project setting.</param>
         /// <param name="buildSetting">The build setting.</param>
-        protected ConnectionSetting(Guid id, ProjectSetting projectSetting, BuildSetting buildSetting)
+        protected ConnectionSetting(Guid id, Guid serviceId, string name, ProjectSetting projectSetting, BuildSetting buildSetting)
         {
             EnsureArg.IsNotEmpty(id);
+            EnsureArg.IsNotEmpty(serviceId);
             EnsureArg.IsNotNull(projectSetting);
             EnsureArg.IsNotNull(buildSetting);
 
             Id = id;
+            ServiceId = serviceId;
+            Name = name ?? string.Empty;
             ProjectSetting = projectSetting;
             BuildSetting = buildSetting;
         }
 
         /// <inheritdoc />
         public Guid Id { get; }
+
+        /// <summary>
+        /// Gets the CI/CD service identifier.
+        /// </summary>
+        /// <value>
+        /// The CI/CD service identifier.
+        /// </value>
+        public Guid ServiceId { get; }
 
         /// <summary>
         /// Gets the name.

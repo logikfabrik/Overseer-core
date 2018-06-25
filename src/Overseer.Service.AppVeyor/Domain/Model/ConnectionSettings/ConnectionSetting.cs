@@ -19,12 +19,14 @@ namespace Overseer.Service.AppVeyor.Domain.Model.ConnectionSettings
         /// Initializes a new instance of the <see cref="ConnectionSetting" /> class.
         /// </summary>
         /// <param name="id">The identifier.</param>
+        /// <param name="serviceId">The CI/CD service identifier.</param>
+        /// <param name="name">The name.</param>
         /// <param name="projectSetting">The project setting.</param>
         /// <param name="buildSetting">The build setting.</param>
         /// <param name="token">The token.</param>
         // ReSharper disable once InheritdocConsiderUsage
-        public ConnectionSetting(Guid id, ProjectSetting projectSetting, BuildSetting buildSetting, string token)
-            : base(id, projectSetting, buildSetting)
+        public ConnectionSetting(Guid id, Guid serviceId, string name, ProjectSetting projectSetting, BuildSetting buildSetting, string token)
+            : base(id, serviceId, name, projectSetting, buildSetting)
         {
             EnsureArg.IsNotNullOrEmpty(token);
 
@@ -42,13 +44,15 @@ namespace Overseer.Service.AppVeyor.Domain.Model.ConnectionSettings
         /// <summary>
         /// Creates a new instance of the <see cref="ConnectionSetting" /> class.
         /// </summary>
+        /// <param name="serviceId">The CI/CD service identifier.</param>
+        /// <param name="name">The name.</param>
         /// <param name="projectSetting">The project setting.</param>
         /// <param name="buildSetting">The build setting.</param>
         /// <param name="token">The token.</param>
         /// <returns>A new instance of the <see cref="ConnectionSetting" /> class.</returns>
-        public static ConnectionSetting Create(ProjectSetting projectSetting, BuildSetting buildSetting, string token)
+        public static ConnectionSetting Create(Guid serviceId, string name,ProjectSetting projectSetting, BuildSetting buildSetting, string token)
         {
-            var connection = new ConnectionSetting(Guid.NewGuid(), projectSetting, buildSetting, token);
+            var connection = new ConnectionSetting(Guid.NewGuid(), serviceId, name, projectSetting, buildSetting, token);
 
             MessageBus.Publish(new ConnectionSettingCreated(connection));
 
@@ -59,13 +63,15 @@ namespace Overseer.Service.AppVeyor.Domain.Model.ConnectionSettings
         /// Creates a new instance of the <see cref="ConnectionSetting" /> class.
         /// </summary>
         /// <param name="id">The identifier.</param>
+        /// <param name="serviceId">The CI/CD service identifier.</param>
+        /// <param name="name">The name.</param>
         /// <param name="projectSetting">The project setting.</param>
         /// <param name="buildSetting">The build setting.</param>
         /// <param name="token">The token.</param>
         /// <returns>A new instance of the <see cref="ConnectionSetting" /> class.</returns>
-        public static ConnectionSetting Create(Guid id, ProjectSetting projectSetting, BuildSetting buildSetting, string token)
+        public static ConnectionSetting Create(Guid id, Guid serviceId, string name, ProjectSetting projectSetting, BuildSetting buildSetting, string token)
         {
-            var connectionSetting = new ConnectionSetting(id, projectSetting, buildSetting, token);
+            var connectionSetting = new ConnectionSetting(id, serviceId, name, projectSetting, buildSetting, token);
 
             MessageBus.Publish(new ConnectionSettingCreated(connectionSetting));
 

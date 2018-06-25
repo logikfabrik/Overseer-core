@@ -4,12 +4,23 @@
 
 namespace Overseer.Desktop.Service.AppVeyor.ViewModels
 {
+    using System;
     using Domain.Model.ConnectionSettings;
     using ReactiveUI;
 
     public class CreateConnectionSettingViewModel : Common.ViewModels.CreateConnectionSettingViewModel
     {
         private string _token;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateConnectionSettingViewModel" /> class.
+        /// </summary>
+        /// <param name="serviceId">The CI/CD service identifier.</param>
+        // ReSharper disable once InheritdocConsiderUsage
+        public CreateConnectionSettingViewModel(Guid serviceId)
+            : base(serviceId)
+        {
+        }
 
         /// <summary>
         /// Gets or sets the token.
@@ -22,7 +33,7 @@ namespace Overseer.Desktop.Service.AppVeyor.ViewModels
         /// <inheritdoc />
         protected override void Create()
         {
-            Overseer.Service.AppVeyor.Domain.Model.ConnectionSettings.ConnectionSetting.Create(ProjectSetting.Create(FilterBy), BuildSetting.Create(Take), Token);
+            Overseer.Service.AppVeyor.Domain.Model.ConnectionSettings.ConnectionSetting.Create(ServiceId, Name, ProjectSetting.Create(FilterBy), BuildSetting.Create(Take), Token);
         }
     }
 }
