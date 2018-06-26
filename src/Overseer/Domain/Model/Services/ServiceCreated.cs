@@ -10,8 +10,9 @@ namespace Overseer.Domain.Model.Services
     /// <summary>
     /// Event to be published when a CI/CD service is created.
     /// </summary>
+    /// <remarks>This class has intentionally been made public.</remarks>
     // ReSharper disable once InheritdocConsiderUsage
-    internal sealed class ServiceCreated : Event<Service, Guid>
+    public sealed class ServiceCreated : Event<Service, Guid>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ServiceCreated" /> class.

@@ -2,7 +2,7 @@
 // Copyright (c) anton(at)logikfabrik.se. Licensed under the MIT license.
 // </copyright>
 
-namespace Overseer.Common.Domain.Model
+namespace Overseer.Common.Domain
 {
     /// <summary>
     /// Represents a bootstrapper for bootstrapping domain services, handles, and such.

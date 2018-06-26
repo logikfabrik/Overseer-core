@@ -12,6 +12,7 @@ namespace Overseer.Service.AppVeyor.Domain.Model.ConnectionSettings
     /// <summary>
     /// Represents settings for connecting to the AppVeyor CI/CD service.
     /// </summary>
+    /// <remarks>This class has intentionally been made public.</remarks>
     // ReSharper disable once InheritdocConsiderUsage
     public sealed class ConnectionSetting : Overseer.Domain.Model.ConnectionSettings.ConnectionSetting
     {
@@ -25,7 +26,7 @@ namespace Overseer.Service.AppVeyor.Domain.Model.ConnectionSettings
         /// <param name="buildSetting">The build setting.</param>
         /// <param name="token">The token.</param>
         // ReSharper disable once InheritdocConsiderUsage
-        public ConnectionSetting(Guid id, Guid serviceId, string name, ProjectSetting projectSetting, BuildSetting buildSetting, string token)
+        private ConnectionSetting(Guid id, Guid serviceId, string name, ProjectSetting projectSetting, BuildSetting buildSetting, string token)
             : base(id, serviceId, name, projectSetting, buildSetting)
         {
             EnsureArg.IsNotNullOrEmpty(token);
@@ -50,7 +51,7 @@ namespace Overseer.Service.AppVeyor.Domain.Model.ConnectionSettings
         /// <param name="buildSetting">The build setting.</param>
         /// <param name="token">The token.</param>
         /// <returns>A new instance of the <see cref="ConnectionSetting" /> class.</returns>
-        public static ConnectionSetting Create(Guid serviceId, string name,ProjectSetting projectSetting, BuildSetting buildSetting, string token)
+        public static ConnectionSetting Create(Guid serviceId, string name, ProjectSetting projectSetting, BuildSetting buildSetting, string token)
         {
             var connection = new ConnectionSetting(Guid.NewGuid(), serviceId, name, projectSetting, buildSetting, token);
 
