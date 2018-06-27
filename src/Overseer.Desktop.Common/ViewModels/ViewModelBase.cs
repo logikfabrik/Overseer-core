@@ -6,6 +6,10 @@ namespace Overseer.Desktop.Common.ViewModels
 {
     using ReactiveUI;
 
+    /// <summary>
+    /// Base class for all view models.
+    /// </summary>
+    // ReSharper disable once InheritdocConsiderUsage
     public abstract class ViewModelBase : ReactiveObject
     {
     }

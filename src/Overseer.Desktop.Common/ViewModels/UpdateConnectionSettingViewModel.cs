@@ -1,4 +1,4 @@
-﻿// <copyright file="CreateConnectionSettingViewModel.cs" company="Logikfabrik">
+﻿// <copyright file="UpdateConnectionSettingViewModel.cs" company="Logikfabrik">
 // Copyright (c) anton(at)logikfabrik.se. Licensed under the MIT license.
 // </copyright>
 
@@ -8,21 +8,21 @@ namespace Overseer.Desktop.Common.ViewModels
     using ReactiveUI;
 
     /// <summary>
-    /// Base class for view models for creating settings for connecting to a CI/CD service.
+    /// Base class for view models for updating settings for connecting to a CI/CD service.
     /// </summary>
     // ReSharper disable once InheritdocConsiderUsage
-    public abstract class CreateConnectionSettingViewModel : ViewModelBase
+    public abstract class UpdateConnectionSettingViewModel : ViewModelBase
     {
         private string _name;
         private IEnumerable<string> _filterBy;
         private int _take;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="CreateConnectionSettingViewModel" /> class.
+        /// Initializes a new instance of the <see cref="UpdateConnectionSettingViewModel" /> class.
         /// </summary>
-        protected CreateConnectionSettingViewModel()
+        protected UpdateConnectionSettingViewModel()
         {
-            Save = ReactiveCommand.Create(Create);
+            Save = ReactiveCommand.Create(Update);
         }
 
         /// <summary>
@@ -51,6 +51,6 @@ namespace Overseer.Desktop.Common.ViewModels
 
         public ReactiveCommand Save { get; }
 
-        protected abstract void Create();
+        protected abstract void Update();
     }
 }

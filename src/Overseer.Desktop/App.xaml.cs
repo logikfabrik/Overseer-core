@@ -1,13 +1,18 @@
-﻿using Avalonia;
-using Avalonia.Markup.Xaml;
+﻿// <copyright file="App.xaml.cs" company="Logikfabrik">
+// Copyright (c) anton(at)logikfabrik.se. Licensed under the MIT license.
+// </copyright>
 
 namespace Overseer.Desktop
 {
+    using Avalonia;
+    using Avalonia.Markup.Xaml;
+
     public class App : Application
     {
+        /// <inheritdoc />
         public override void Initialize()
         {
-            AvaloniaXamlLoader.Load(this);
+            AvaloniaXamlLoaderPortableXaml.Load(this);
         }
     }
 }

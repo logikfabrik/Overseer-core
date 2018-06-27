@@ -1,17 +1,17 @@
-﻿// <copyright file="CreateConnectionSettingViewModel.cs" company="Logikfabrik">
+﻿// <copyright file="UpdateConnectionSettingViewModel.cs" company="Logikfabrik">
 // Copyright (c) anton(at)logikfabrik.se. Licensed under the MIT license.
 // </copyright>
 
 namespace Overseer.Desktop.Service.AppVeyor.ViewModels
 {
-    using Domain.Model.ConnectionSettings;
+    using System;
     using ReactiveUI;
 
     /// <summary>
-    /// View model for creating settings for connecting to the AppVeyor CI/CD service.
+    /// View model for updating settings for connecting to the AppVeyor CI/CD service.
     /// </summary>
     // ReSharper disable once InheritdocConsiderUsage
-    public sealed class CreateConnectionSettingViewModel : Common.ViewModels.CreateConnectionSettingViewModel
+    public sealed class UpdateConnectionSettingViewModel : Common.ViewModels.UpdateConnectionSettingViewModel
     {
         private string _token;
 
@@ -24,9 +24,9 @@ namespace Overseer.Desktop.Service.AppVeyor.ViewModels
         public string Token { get => _token; set => this.RaiseAndSetIfChanged(ref _token, value); }
 
         /// <inheritdoc />
-        protected override void Create()
+        protected override void Update()
         {
-            Overseer.Service.AppVeyor.Domain.Model.ConnectionSettings.ConnectionSetting.Create(Name, ProjectSetting.Create(FilterBy), BuildSetting.Create(Take), Token);
+            throw new NotImplementedException();
         }
     }
 }

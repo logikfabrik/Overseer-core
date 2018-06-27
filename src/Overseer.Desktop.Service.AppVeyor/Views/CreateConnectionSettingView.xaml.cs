@@ -9,9 +9,12 @@ namespace Overseer.Desktop.Service.AppVeyor.Views
 
     public class CreateConnectionSettingView : UserControl
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateConnectionSettingView" /> class.
+        /// </summary>
         public CreateConnectionSettingView()
         {
-            this.InitializeComponent();
+            InitializeComponent();
         }
 
         private void InitializeComponent()

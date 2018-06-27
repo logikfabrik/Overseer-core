@@ -8,6 +8,5 @@ namespace Overseer.Desktop.ViewModels
 
     public class ServicesViewModel : ViewModelBase
     {
-        
     }
 }

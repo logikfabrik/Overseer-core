@@ -4,7 +4,6 @@
 
 namespace Overseer.Service.AppVeyor.Domain.Model.Services
 {
-    using System;
     using Overseer.Common.Domain.Model;
     using Overseer.Domain.Model.Services;
 
@@ -15,7 +14,7 @@ namespace Overseer.Service.AppVeyor.Domain.Model.Services
     internal sealed class Service : Overseer.Domain.Model.Services.Service
     {
         private Service()
-            : base(Guid.Parse("1402A099-6F97-4A10-B75F-81D255F7D3EB"), "AppVeyor")
+            : base(ServiceIdentifier.Id, "AppVeyor")
         {
         }
 
