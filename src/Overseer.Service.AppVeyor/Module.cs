@@ -4,8 +4,10 @@
 
 namespace Overseer.Service.AppVeyor
 {
+    using Domain;
     using Infrastructure;
     using Ninject.Modules;
+    using Overseer.Common.Domain;
     using Overseer.Common.Infrastructure;
 
     /// <summary>
@@ -17,6 +19,7 @@ namespace Overseer.Service.AppVeyor
         /// <inheritdoc />
         public override void Load()
         {
+            Bind<IBootstrapper>().To<Bootstrapper>();
             Bind<IConnectionSettingDtoFactory>().To<ConnectionSettingDtoFactory>();
             Bind<IConnectionSettingFactory>().To<ConnectionSettingFactory>();
         }

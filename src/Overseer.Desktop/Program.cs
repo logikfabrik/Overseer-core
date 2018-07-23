@@ -7,6 +7,7 @@ namespace Overseer.Desktop
     using Avalonia;
     using Avalonia.Logging.Serilog;
     using Ninject;
+    using Ninject.Extensions.Factory;
     using Splat;
     using ViewModels;
     using Views;
@@ -16,6 +17,10 @@ namespace Overseer.Desktop
         public static void Main(string[] args)
         {
             Locator.Current = GetResolver();
+
+            var bootstrapper = Locator.Current.GetService<Bootstrapper>();
+
+            bootstrapper.Run();
 
             var appBuilder = BuildAvaloniaApp();
 
@@ -33,6 +38,11 @@ namespace Overseer.Desktop
         private static FuncDependencyResolver GetResolver()
         {
             var kernel = new StandardKernel();
+
+            if (!kernel.HasModule(new FuncModule().Name))
+            {
+                kernel = new StandardKernel(new FuncModule());
+            }
 
             kernel.Load("Overseer*.dll");
 

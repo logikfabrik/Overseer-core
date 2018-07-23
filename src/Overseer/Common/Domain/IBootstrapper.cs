@@ -5,7 +5,7 @@
 namespace Overseer.Common.Domain
 {
     /// <summary>
-    /// Represents a bootstrapper for bootstrapping domain services, handles, and such.
+    /// Represents a library bootstrapper for bootstrapping domain services, handles, and such.
     /// </summary>
     public interface IBootstrapper
     {

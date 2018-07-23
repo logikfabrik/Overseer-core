@@ -44,6 +44,7 @@
   
   <ItemGroup>
     <ProjectReference Include="..\Overseer.Desktop.Common\Overseer.Desktop.Common.csproj" />
+    <ProjectReference Include="..\Overseer.Desktop.Service.AppVeyor\Overseer.Desktop.Service.AppVeyor.csproj" />
     <ProjectReference Include="..\Overseer\Overseer.csproj" />
   </ItemGroup>
   
