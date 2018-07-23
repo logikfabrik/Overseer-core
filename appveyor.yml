@@ -1,0 +1,7 @@
+version: 0.0.1.{build}
+os: Visual Studio 2017
+platform: Any CPU
+configuration: Release
+build:
+  project: src/Overseer.sln
+  verbosity: normal
