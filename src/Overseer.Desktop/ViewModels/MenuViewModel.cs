@@ -4,7 +4,7 @@
 
 namespace Overseer.Desktop.ViewModels
 {
-    class MenuViewModel
+    public sealed class MenuViewModel
     {
     }
 }

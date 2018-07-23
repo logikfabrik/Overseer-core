@@ -5,9 +5,17 @@
 namespace Overseer.Desktop.ViewModels
 {
     using Overseer.Desktop.Common.ViewModels;
+    using ReactiveUI;
 
-    public class MainWindowViewModel : ViewModelBase
+    public sealed class MainWindowViewModel : ViewModelBase
     {
-        public string Greeting => "Hello World!";
+        private ViewModelBase _activeViewModel;
+
+        public MainWindowViewModel(ServicesViewModel servicesViewModel)
+        {
+            ActiveViewModel = servicesViewModel;
+        }
+
+        public ViewModelBase ActiveViewModel { get => _activeViewModel; set => this.RaiseAndSetIfChanged(ref _activeViewModel, value); }
     }
 }

@@ -4,10 +4,7 @@
     xmlns:vm="clr-namespace:Overseer.Desktop.ViewModels;assembly=Overseer.Desktop"
     Title="Overseer.Desktop"
     Icon="resm:Overseer.Desktop.Assets.avalonia-logo.ico">
-
-    <TextBlock
-        HorizontalAlignment="Center"
-        VerticalAlignment="Center"
-        Text="{Binding Greeting}" />
-
+    <Panel>
+        <ContentControl Content="{Binding ActiveViewModel}" />
+    </Panel>
 </Window>

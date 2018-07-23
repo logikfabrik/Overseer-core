@@ -4,9 +4,19 @@
 
 namespace Overseer.Desktop.ViewModels
 {
+    using System.Collections.Generic;
+    using EnsureThat;
     using Overseer.Desktop.Common.ViewModels;
 
-    public class ServicesViewModel : ViewModelBase
+    public sealed class ServicesViewModel : ViewModelBase
     {
+        public ServicesViewModel(IEnumerable<ServiceViewModel> serviceViewModels)
+        {
+            EnsureArg.IsNotNull(serviceViewModels);
+
+            ServiceViewModels = serviceViewModels;
+        }
+
+        public IEnumerable<ServiceViewModel> ServiceViewModels { get; }
     }
 }

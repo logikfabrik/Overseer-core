@@ -9,7 +9,7 @@ namespace Overseer.Desktop
     using Overseer.Common.Domain;
 
     /// <summary>
-    /// Represents a client bootstrapper for running library bootstrappers.
+    /// Represents a client bootstrapper for running all library bootstrappers.
     /// </summary>
     public sealed class Bootstrapper
     {
@@ -18,7 +18,7 @@ namespace Overseer.Desktop
         /// <summary>
         /// Initializes a new instance of the <see cref="Bootstrapper" /> class.
         /// </summary>
-        /// <param name="bootstrappers">The library bootstrappers.</param>
+        /// <param name="bootstrappers">All library bootstrappers.</param>
         public Bootstrapper(IEnumerable<IBootstrapper> bootstrappers)
         {
             EnsureArg.IsNotNull(bootstrappers);
