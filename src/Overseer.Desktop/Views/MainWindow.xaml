@@ -5,6 +5,6 @@
     Title="Overseer.Desktop"
     Icon="resm:Overseer.Desktop.Assets.avalonia-logo.ico">
     <Panel>
-        <ContentControl Content="{Binding ActiveViewModel}" />
+        <ContentControl Content="{Binding ActiveObject}" />
     </Panel>
 </Window>

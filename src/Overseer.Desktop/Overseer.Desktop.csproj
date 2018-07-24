@@ -27,7 +27,7 @@
   
   <ItemGroup>
     <None Remove="stylecop.json" />
-    <None Remove="Views\ServicesView.xaml" />
+    <None Remove="Views\ViewServicesView.xaml" />
   </ItemGroup>
   
   <ItemGroup>
@@ -54,7 +54,13 @@
   </ItemGroup>
   
   <ItemGroup>
-    <EmbeddedResource Update="Views\ServicesView.xaml">
+    <Compile Update="Views\ViewServicesView.xaml.cs">
+      <DependentUpon>ViewServicesView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <EmbeddedResource Update="Views\ViewServicesView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
   </ItemGroup>

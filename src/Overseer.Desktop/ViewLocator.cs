@@ -33,7 +33,7 @@ namespace Overseer.Desktop
                 return Locator.Current.GetService(viewType) as IControl;
             }
 
-            return new TextBlock { Text = "Not Found: " + viewTypeAssemblyQualifiedName };
+            return new TextBlock { Text = $"Could not find view for view model of type '{viewTypeAssemblyQualifiedName}'." };
         }
 
         /// <inheritdoc />

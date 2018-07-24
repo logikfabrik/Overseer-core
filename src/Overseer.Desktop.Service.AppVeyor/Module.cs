@@ -16,7 +16,7 @@ namespace Overseer.Desktop.Service.AppVeyor
         /// <inheritdoc />
         public override void Load()
         {
-            Bind<Common.ViewModels.ServiceViewModel>().To<ServiceViewModel>();
+            Bind<Common.ViewModels.ViewServiceViewModel>().To<ViewServiceViewModel>();
         }
     }
 }

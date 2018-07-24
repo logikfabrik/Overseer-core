@@ -4,18 +4,15 @@
 
 namespace Overseer.Desktop.ViewModels
 {
-    using Overseer.Desktop.Common.ViewModels;
+    using Framework;
     using ReactiveUI;
 
-    public sealed class MainWindowViewModel : ViewModelBase
+    public sealed class MainWindowViewModel : Conductor
     {
-        private ViewModelBase _activeViewModel;
-
-        public MainWindowViewModel(ServicesViewModel servicesViewModel)
+        public MainWindowViewModel(IMessageBus messageBus, ViewServicesViewModel servicesViewModel)
+            : base(messageBus)
         {
-            ActiveViewModel = servicesViewModel;
+            ActiveObject = servicesViewModel;
         }
-
-        public ViewModelBase ActiveViewModel { get => _activeViewModel; set => this.RaiseAndSetIfChanged(ref _activeViewModel, value); }
     }
 }

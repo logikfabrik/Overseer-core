@@ -8,6 +8,7 @@ namespace Overseer.Desktop
     using Avalonia.Logging.Serilog;
     using Ninject;
     using Ninject.Extensions.Factory;
+    using ReactiveUI;
     using Splat;
     using ViewModels;
     using Views;
@@ -45,6 +46,8 @@ namespace Overseer.Desktop
             }
 
             kernel.Load("Overseer*.dll");
+
+            kernel.Bind<IMessageBus>().ToConstant(MessageBus.Current);
 
             return new FuncDependencyResolver(
                 (service, contract) => contract != null ? kernel.GetAll(service, contract) : kernel.GetAll(service),
