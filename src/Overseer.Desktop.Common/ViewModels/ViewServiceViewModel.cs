@@ -8,6 +8,10 @@ namespace Overseer.Desktop.Common.ViewModels
 
     public abstract class ViewServiceViewModel : ViewModelBase
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ViewServiceViewModel" /> class.
+        /// </summary>
+        /// <param name="name">The service name.</param>
         protected ViewServiceViewModel(string name)
         {
             EnsureArg.IsNotNullOrEmpty(name);
@@ -16,10 +20,10 @@ namespace Overseer.Desktop.Common.ViewModels
         }
 
         /// <summary>
-        /// Gets the name.
+        /// Gets the service name.
         /// </summary>
         /// <value>
-        /// The name.
+        /// The service name.
         /// </value>
         public string Name { get; }
     }

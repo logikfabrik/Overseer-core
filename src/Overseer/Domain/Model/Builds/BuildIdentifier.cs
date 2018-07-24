@@ -9,7 +9,7 @@ namespace Overseer.Domain.Model.Builds
     using Overseer.Common.Domain.Model;
 
     /// <summary>
-    /// Represents an identifier for a CI/CD build.
+    /// An identifier for a CI/CD build.
     /// </summary>
     // ReSharper disable once InheritdocConsiderUsage
     public sealed class BuildIdentifier : IValueType

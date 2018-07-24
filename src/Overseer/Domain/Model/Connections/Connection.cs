@@ -9,7 +9,7 @@ namespace Overseer.Domain.Model.Connections
     using Overseer.Common.Domain.Model;
 
     /// <summary>
-    /// Represents a connection to a CI/CD service.
+    /// A connection to a CI/CD service.
     /// </summary>
     // ReSharper disable once InheritdocConsiderUsage
     public sealed class Connection : IAggregateRoot<Guid>

@@ -9,7 +9,7 @@ namespace Overseer.Domain.Model.ConnectionSettings
     using Overseer.Common.Domain.Model;
 
     /// <summary>
-    /// Represents settings for connecting to a CI/CD service.
+    /// Base class for settings for connecting to a CI/CD service.
     /// </summary>
     /// <remarks>This class has intentionally been made public and abstract.</remarks>
     // ReSharper disable once InheritdocConsiderUsage

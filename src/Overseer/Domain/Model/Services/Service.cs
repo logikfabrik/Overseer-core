@@ -9,7 +9,7 @@ namespace Overseer.Domain.Model.Services
     using Overseer.Common.Domain.Model;
 
     /// <summary>
-    /// Represents a CI/CD service.
+    /// Base class for CI/CD services.
     /// </summary>
     /// <remarks>This class has intentionally been made public and abstract.</remarks>
     // ReSharper disable once InheritdocConsiderUsage

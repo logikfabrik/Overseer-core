@@ -5,7 +5,7 @@
 namespace Overseer.Common.Domain.Model
 {
     /// <summary>
-    /// Represents an event.
+    /// Base class for events.
     /// </summary>
     /// <typeparam name="TEntity">The entity type.</typeparam>
     /// <typeparam name="TIdentifier">The identifier type.</typeparam>

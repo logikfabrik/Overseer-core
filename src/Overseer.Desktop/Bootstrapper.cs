@@ -9,7 +9,7 @@ namespace Overseer.Desktop
     using Overseer.Common.Domain;
 
     /// <summary>
-    /// Represents a client bootstrapper for running all library bootstrappers.
+    /// A client bootstrapper for running all library bootstrappers.
     /// </summary>
     public sealed class Bootstrapper
     {

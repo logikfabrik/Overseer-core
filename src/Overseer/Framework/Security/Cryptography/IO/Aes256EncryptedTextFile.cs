@@ -11,7 +11,7 @@ namespace Overseer.Framework.Security.Cryptography.IO
     using Overseer.Framework.IO;
 
     /// <summary>
-    /// Represents an AES encrypted text file, using a 256 bit key and a 128 bit IV.
+    /// An AES encrypted text file, using a 256 bit key and a 128 bit IV.
     /// </summary>
     // ReSharper disable once InheritdocConsiderUsage
     public class Aes256EncryptedTextFile : TextFile

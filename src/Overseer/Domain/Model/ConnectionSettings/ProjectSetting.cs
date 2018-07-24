@@ -10,7 +10,7 @@ namespace Overseer.Domain.Model.ConnectionSettings
     using Overseer.Common.Domain.Model;
 
     /// <summary>
-    /// Represents project specific settings for connecting to a CI/CD service.
+    /// Project specific settings for connecting to a CI/CD service.
     /// </summary>
     // ReSharper disable once InheritdocConsiderUsage
     public sealed class ProjectSetting : IValueType

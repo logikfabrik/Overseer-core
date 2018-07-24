@@ -8,7 +8,7 @@ namespace Overseer.Domain.Model.ConnectionSettings
     using Overseer.Common.Domain.Model;
 
     /// <summary>
-    /// Represents build specific settings for connecting to a CI/CD service.
+    /// Build specific settings for connecting to a CI/CD service.
     /// </summary>
     // ReSharper disable once InheritdocConsiderUsage
     public sealed class BuildSetting : IValueType

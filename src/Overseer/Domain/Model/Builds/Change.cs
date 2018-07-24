@@ -10,7 +10,7 @@ namespace Overseer.Domain.Model.Builds
     using Overseer.Common.Domain.Model;
 
     /// <summary>
-    /// Represents a VCS change.
+    /// A VCS change.
     /// </summary>
     // ReSharper disable once InheritdocConsiderUsage
     public sealed class Change : IValueType

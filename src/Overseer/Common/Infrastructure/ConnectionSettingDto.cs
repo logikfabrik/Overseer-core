@@ -7,7 +7,7 @@ namespace Overseer.Common.Infrastructure
     using System;
 
     /// <summary>
-    /// DTO for settings for connecting to a CI/CD service.
+    /// Base class DTO for settings for connecting to a CI/CD service.
     /// </summary>
     public abstract class ConnectionSettingDto
     {

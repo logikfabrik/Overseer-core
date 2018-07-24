@@ -11,7 +11,7 @@ namespace Overseer.Service.AppVeyor.Domain.Model.ConnectionSettings
     using Services;
 
     /// <summary>
-    /// Represents settings for connecting to the AppVeyor CI/CD service.
+    /// Settings for connecting to the AppVeyor CI/CD service.
     /// </summary>
     /// <remarks>This class has intentionally been made public.</remarks>
     // ReSharper disable once InheritdocConsiderUsage

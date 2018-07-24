@@ -8,7 +8,7 @@ namespace Overseer.Domain.Model
     using Overseer.Common.Domain.Model;
 
     /// <summary>
-    /// Represents a CI/CD/VCS user.
+    /// A CI/CD/VCS user.
     /// </summary>
     // ReSharper disable once InheritdocConsiderUsage
     public sealed class User : IValueType

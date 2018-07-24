@@ -9,7 +9,7 @@ namespace Overseer.Domain.Model.Projects
     using Overseer.Common.Domain.Model;
 
     /// <summary>
-    /// Represents an identifier for a CI/CD project.
+    /// An identifier for a CI/CD project.
     /// </summary>
     // ReSharper disable once InheritdocConsiderUsage
     public sealed class ProjectIdentifier : IValueType

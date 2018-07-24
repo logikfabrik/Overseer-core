@@ -7,7 +7,7 @@ namespace Overseer.Domain.Model.Builds
     using Overseer.Common.Domain.Model;
 
     /// <summary>
-    /// Represents a VCS branch.
+    /// A VCS branch.
     /// </summary>
     // ReSharper disable once InheritdocConsiderUsage
     public sealed class Branch : IValueType

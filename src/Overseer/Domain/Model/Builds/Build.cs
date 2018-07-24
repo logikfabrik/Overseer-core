@@ -11,7 +11,7 @@ namespace Overseer.Domain.Model.Builds
     using Overseer.Common.Domain.Model;
 
     /// <summary>
-    /// Represents a CI/CD build.
+    /// A CI/CD build.
     /// </summary>
     // ReSharper disable once InheritdocConsiderUsage
     public sealed class Build : IAggregateRoot<BuildIdentifier>

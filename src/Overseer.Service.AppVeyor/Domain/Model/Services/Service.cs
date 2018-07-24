@@ -8,7 +8,7 @@ namespace Overseer.Service.AppVeyor.Domain.Model.Services
     using Overseer.Domain.Model.Services;
 
     /// <summary>
-    /// Represents the AppVeyor CI/CD service.
+    /// The AppVeyor CI/CD service.
     /// </summary>
     // ReSharper disable once InheritdocConsiderUsage
     internal sealed class Service : Overseer.Domain.Model.Services.Service

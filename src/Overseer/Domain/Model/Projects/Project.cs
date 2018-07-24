@@ -8,7 +8,7 @@ namespace Overseer.Domain.Model.Projects
     using Overseer.Common.Domain.Model;
 
     /// <summary>
-    /// Represents a CI/CD project.
+    /// A CI/CD project.
     /// </summary>
     // ReSharper disable once InheritdocConsiderUsage
     public sealed class Project : IAggregateRoot<ProjectIdentifier>
