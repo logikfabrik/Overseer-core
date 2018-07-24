@@ -4,7 +4,12 @@
     xmlns:vm="clr-namespace:Overseer.Desktop.ViewModels;assembly=Overseer.Desktop"
     Title="Overseer.Desktop"
     Icon="resm:Overseer.Desktop.Assets.avalonia-logo.ico">
-    <Panel>
-        <ContentControl Content="{Binding ActiveObject}" />
-    </Panel>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="4*" />
+        </Grid.ColumnDefinitions>
+        <ContentControl Grid.Column="0" Content="{Binding ViewMenuViewModel}" />
+        <ContentControl Grid.Column="1" Content="{Binding ActiveObject}" />
+    </Grid>
 </Window>

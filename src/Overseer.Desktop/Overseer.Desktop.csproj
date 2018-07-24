@@ -27,6 +27,11 @@
   
   <ItemGroup>
     <None Remove="stylecop.json" />
+    <None Remove="Views\UpdateSettingsView.xaml" />
+    <None Remove="Views\ViewAboutView.xaml" />
+    <None Remove="Views\ViewConnectionsView.xaml" />
+    <None Remove="Views\ViewDashboardView.xaml" />
+    <None Remove="Views\ViewMenuView.xaml" />
     <None Remove="Views\ViewServicesView.xaml" />
   </ItemGroup>
   
@@ -60,6 +65,21 @@
   </ItemGroup>
   
   <ItemGroup>
+    <EmbeddedResource Update="Views\UpdateSettingsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ViewAboutView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ViewConnectionsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ViewDashboardView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ViewMenuView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\ViewServicesView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>

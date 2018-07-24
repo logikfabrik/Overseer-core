@@ -9,10 +9,12 @@ namespace Overseer.Desktop.ViewModels
 
     public sealed class MainWindowViewModel : Conductor
     {
-        public MainWindowViewModel(IMessageBus messageBus, ViewServicesViewModel servicesViewModel)
+        public MainWindowViewModel(IMessageBus messageBus, ViewMenuViewModel viewMenuViewModel)
             : base(messageBus)
         {
-            ActiveObject = servicesViewModel;
+            ViewMenuViewModel = viewMenuViewModel;
         }
+
+        public ViewMenuViewModel ViewMenuViewModel { get; }
     }
 }

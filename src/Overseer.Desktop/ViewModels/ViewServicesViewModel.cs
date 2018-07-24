@@ -1,4 +1,4 @@
-﻿// <copyright file="ServicesViewModel.cs" company="Logikfabrik">
+﻿// <copyright file="ViewServicesViewModel.cs" company="Logikfabrik">
 // Copyright (c) anton(at)logikfabrik.se. Licensed under the MIT license.
 // </copyright>
 

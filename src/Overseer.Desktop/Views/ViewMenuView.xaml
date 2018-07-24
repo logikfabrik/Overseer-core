@@ -1,0 +1,8 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel>
+        <Button Command="{Binding ViewDashboard}" Content="View Dashboard" />
+        <Button Command="{Binding ViewConnections}" Content="View Connections" />
+        <Button Command="{Binding UpdateSettings}" Content="Update Settings" />
+        <Button Command="{Binding ViewAbout}" Content="View About" />
+    </StackPanel>
+</UserControl>

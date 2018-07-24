@@ -8,9 +8,11 @@ namespace Overseer.Desktop.Framework
     using EnsureThat;
     using ReactiveUI;
 
-    public abstract class Conductor : ReactiveObject, IObserver<IConductorMessage>
+    public abstract class Conductor : ReactiveObject, IObserver<IConductorMessage>, IDisposable
     {
+        private readonly IDisposable _conductorMessageSubscription;
         private IReactiveObject _activeObject;
+        private bool _disposed;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Conductor" /> class.
@@ -20,7 +22,7 @@ namespace Overseer.Desktop.Framework
         {
             EnsureArg.IsNotNull(messageBus);
 
-            messageBus.Listen<IConductorMessage>().Subscribe(this);
+            _conductorMessageSubscription = messageBus.Listen<IConductorMessage>().Subscribe(this);
         }
 
         /// <summary>
@@ -47,6 +49,31 @@ namespace Overseer.Desktop.Framework
         public void OnNext(IConductorMessage value)
         {
             ActiveObject = value.ObjectToActivate;
+        }
+
+        /// <inheritdoc />
+        public void Dispose()
+        {
+            Dispose(true);
+        }
+
+        /// <summary>
+        /// Releases unmanaged and - optionally - managed resources.
+        /// </summary>
+        /// <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
+        protected virtual void Dispose(bool disposing)
+        {
+            if (_disposed)
+            {
+                return;
+            }
+
+            if (disposing)
+            {
+                _conductorMessageSubscription.Dispose();
+            }
+
+            _disposed = true;
         }
     }
 }
