@@ -6,6 +6,10 @@ namespace Overseer.Desktop.Common.ViewModels
 {
     using EnsureThat;
 
+    /// <summary>
+    /// Base class for view models for selecting a CI/CD service to create a connection for.
+    /// </summary>
+    // ReSharper disable once InheritdocConsiderUsage
     public abstract class ViewServiceViewModel : ViewModelBase
     {
         /// <summary>

@@ -7,6 +7,7 @@ namespace Overseer.Desktop
     using Avalonia;
     using Avalonia.Markup.Xaml;
 
+    /// <inheritdoc />
     public class App : Application
     {
         /// <inheritdoc />

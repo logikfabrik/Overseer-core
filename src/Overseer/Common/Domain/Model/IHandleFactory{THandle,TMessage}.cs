@@ -4,10 +4,19 @@
 
 namespace Overseer.Common.Domain.Model
 {
+    /// <summary>
+    /// Represents a factory for creating handles.
+    /// </summary>
+    /// <typeparam name="THandle">The type of the handle.</typeparam>
+    /// <typeparam name="TMessage">The type of the message.</typeparam>
     internal interface IHandleFactory<out THandle, TMessage>
         where THandle : IHandle<TMessage>
         where TMessage : IMessage
     {
+        /// <summary>
+        /// Creates a handle.
+        /// </summary>
+        /// <returns>A handle.</returns>
         THandle Create();
     }
 }
