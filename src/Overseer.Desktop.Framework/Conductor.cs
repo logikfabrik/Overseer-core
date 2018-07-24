@@ -8,6 +8,10 @@ namespace Overseer.Desktop.Framework
     using EnsureThat;
     using ReactiveUI;
 
+    /// <summary>
+    /// A conductor allows for objects to be activated one at a time.
+    /// </summary>
+    // ReSharper disable once InheritdocConsiderUsage
     public abstract class Conductor : ReactiveObject, IObserver<IConductorMessage>, IDisposable
     {
         private readonly IDisposable _conductorMessageSubscription;

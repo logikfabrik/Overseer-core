@@ -6,6 +6,10 @@ namespace Overseer.Desktop.Framework
 {
     using ReactiveUI;
 
+    /// <summary>
+    /// Represents a factory for creating conductor messages.
+    /// </summary>
+    /// <typeparam name="T">The type of the object to activate.</typeparam>
     public interface IConductorMessageFactory<T>
         where T : IReactiveObject
     {

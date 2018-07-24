@@ -6,7 +6,11 @@ namespace Overseer.Desktop.Framework
 {
     using ReactiveUI;
 
-    /// <inheritdoc />
+    /// <summary>
+    /// A conductor message.
+    /// </summary>
+    /// <typeparam name="T">The type of the object to activate.</typeparam>
+    // ReSharper disable once InheritdocConsiderUsage
     public sealed class ConductorMessage<T> : IConductorMessage
         where T : IReactiveObject
     {

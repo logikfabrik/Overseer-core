@@ -11,7 +11,7 @@ namespace Overseer.Framework.Xml.Serialization
     /// <summary>
     /// Serializes and deserializes objects into and from XML documents.
     /// </summary>
-    /// <typeparam name="T">The object type.</typeparam>
+    /// <typeparam name="T">The type of the object.</typeparam>
     public class XmlSerializer<T>
     {
         private readonly Type[] _extraTypes;
