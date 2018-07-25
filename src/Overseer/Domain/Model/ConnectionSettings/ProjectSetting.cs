@@ -21,7 +21,7 @@ namespace Overseer.Domain.Model.ConnectionSettings
         /// <param name="filterBy">The CI/CD project identifiers to filter by.</param>
         private ProjectSetting(IEnumerable<string> filterBy)
         {
-            var fb = filterBy as string[] ?? filterBy.ToArray();
+            var fb = filterBy as string[] ?? filterBy?.ToArray();
 
             EnsureArg.IsNotNull(fb);
 
