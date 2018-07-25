@@ -4,6 +4,8 @@
 
 namespace Overseer.Desktop.Service.AppVeyor
 {
+    using Framework;
+    using Ninject.Extensions.Factory;
     using Ninject.Modules;
     using ViewModels;
 
@@ -16,7 +18,8 @@ namespace Overseer.Desktop.Service.AppVeyor
         /// <inheritdoc />
         public override void Load()
         {
-            Bind<Common.ViewModels.ViewServiceViewModel>().To<ViewServiceViewModel>();
+            Bind<IConductorMessageFactory<CreateConnectionSettingViewModel>>().ToFactory();
+            Bind<Common.ViewModels.ISelectServiceViewModel>().To<SelectServiceViewModel>();
         }
     }
 }

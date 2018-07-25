@@ -2,6 +2,7 @@
     <StackPanel>
         <Button Command="{Binding ViewDashboard}" Content="View Dashboard" />
         <Button Command="{Binding ViewConnections}" Content="View Connections" />
+        <Button Command="{Binding SelectService}" Content="Select Service" />
         <Button Command="{Binding UpdateSettings}" Content="Update Settings" />
         <Button Command="{Binding ViewAbout}" Content="View About" />
     </StackPanel>

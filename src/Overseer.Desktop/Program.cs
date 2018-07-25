@@ -53,6 +53,7 @@ namespace Overseer.Desktop
             kernel.Bind<IMessageBus>().ToConstant(MessageBus.Current);
             kernel.Bind<IConductorMessageFactory<ViewDashboardViewModel>>().ToFactory();
             kernel.Bind<IConductorMessageFactory<ViewConnectionsViewModel>>().ToFactory();
+            kernel.Bind<IConductorMessageFactory<SelectServiceViewModel>>().ToFactory();
             kernel.Bind<IConductorMessageFactory<UpdateSettingsViewModel>>().ToFactory();
             kernel.Bind<IConductorMessageFactory<ViewAboutViewModel>>().ToFactory();
 

@@ -27,12 +27,12 @@
   
   <ItemGroup>
     <None Remove="stylecop.json" />
+    <None Remove="Views\SelectServiceView.xaml" />
     <None Remove="Views\UpdateSettingsView.xaml" />
     <None Remove="Views\ViewAboutView.xaml" />
     <None Remove="Views\ViewConnectionsView.xaml" />
     <None Remove="Views\ViewDashboardView.xaml" />
     <None Remove="Views\ViewMenuView.xaml" />
-    <None Remove="Views\ViewServicesView.xaml" />
   </ItemGroup>
   
   <ItemGroup>
@@ -59,8 +59,8 @@
   </ItemGroup>
   
   <ItemGroup>
-    <Compile Update="Views\ViewServicesView.xaml.cs">
-      <DependentUpon>ViewServicesView.xaml</DependentUpon>
+    <Compile Update="Views\SelectServiceView.xaml.cs">
+      <DependentUpon>SelectServiceView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   
@@ -80,7 +80,7 @@
     <EmbeddedResource Update="Views\ViewMenuView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\ViewServicesView.xaml">
+    <EmbeddedResource Update="Views\SelectServiceView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
   </ItemGroup>

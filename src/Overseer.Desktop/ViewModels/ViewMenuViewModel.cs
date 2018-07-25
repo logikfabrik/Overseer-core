@@ -15,17 +15,20 @@ namespace Overseer.Desktop.ViewModels
             IMessageBus messageBus,
             IConductorMessageFactory<ViewDashboardViewModel> viewDashboardConductorMessageFactory,
             IConductorMessageFactory<ViewConnectionsViewModel> viewConnectionsConductorMessageFactory,
+            IConductorMessageFactory<SelectServiceViewModel> selectServiceConductorMessageFactory,
             IConductorMessageFactory<UpdateSettingsViewModel> updateSettingsConductorMessageFactory,
             IConductorMessageFactory<ViewAboutViewModel> viewAboutConductorMessageFactory)
         {
             EnsureArg.IsNotNull(messageBus);
             EnsureArg.IsNotNull(viewDashboardConductorMessageFactory);
             EnsureArg.IsNotNull(viewConnectionsConductorMessageFactory);
+            EnsureArg.IsNotNull(selectServiceConductorMessageFactory);
             EnsureArg.IsNotNull(updateSettingsConductorMessageFactory);
             EnsureArg.IsNotNull(viewAboutConductorMessageFactory);
 
             ViewDashboard = ReactiveCommand.Create(() => messageBus.SendMessage((IConductorMessage)viewDashboardConductorMessageFactory.Create()));
             ViewConnections = ReactiveCommand.Create(() => messageBus.SendMessage((IConductorMessage)viewConnectionsConductorMessageFactory.Create()));
+            SelectService = ReactiveCommand.Create(() => messageBus.SendMessage((IConductorMessage)selectServiceConductorMessageFactory.Create()));
             UpdateSettings = ReactiveCommand.Create(() => messageBus.SendMessage((IConductorMessage)updateSettingsConductorMessageFactory.Create()));
             ViewAbout = ReactiveCommand.Create(() => messageBus.SendMessage((IConductorMessage)viewAboutConductorMessageFactory.Create()));
         }
@@ -33,6 +36,8 @@ namespace Overseer.Desktop.ViewModels
         public ReactiveCommand ViewDashboard { get; }
 
         public ReactiveCommand ViewConnections { get; }
+
+        public ReactiveCommand SelectService { get; }
 
         public ReactiveCommand UpdateSettings { get; }
 

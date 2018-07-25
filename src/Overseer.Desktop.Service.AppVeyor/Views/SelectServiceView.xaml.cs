@@ -1,4 +1,4 @@
-﻿// <copyright file="ViewServiceView.xaml.cs" company="Logikfabrik">
+﻿// <copyright file="SelectServiceView.xaml.cs" company="Logikfabrik">
 // Copyright (c) anton(at)logikfabrik.se. Licensed under the MIT license.
 // </copyright>
 
@@ -7,12 +7,12 @@ namespace Overseer.Desktop.Service.AppVeyor.Views
     using Avalonia.Controls;
     using Avalonia.Markup.Xaml;
 
-    public class ViewServiceView : UserControl
+    public class SelectServiceView : UserControl
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ViewServiceView" /> class.
+        /// Initializes a new instance of the <see cref="SelectServiceView" /> class.
         /// </summary>
-        public ViewServiceView()
+        public SelectServiceView()
         {
             InitializeComponent();
         }
