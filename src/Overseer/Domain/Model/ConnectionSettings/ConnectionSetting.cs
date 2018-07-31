@@ -11,7 +11,7 @@ namespace Overseer.Domain.Model.ConnectionSettings
     /// <summary>
     /// Base class for settings for connecting to a CI/CD service.
     /// </summary>
-    /// <remarks>This class has intentionally been made public and abstract.</remarks>
+    /// <remarks>This class has intentionally been made public.</remarks>
     // ReSharper disable once InheritdocConsiderUsage
     public abstract class ConnectionSetting : IAggregateRoot<Guid>
     {

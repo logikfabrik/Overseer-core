@@ -46,17 +46,15 @@ namespace Overseer.Service.AppVeyor.Domain.Model.ConnectionSettings
         /// Creates a new instance of the <see cref="ConnectionSetting" /> class.
         /// </summary>
         /// <param name="name">The name.</param>
-        /// <param name="projectSetting">The project setting.</param>
-        /// <param name="buildSetting">The build setting.</param>
         /// <param name="token">The token.</param>
         /// <returns>A new instance of the <see cref="ConnectionSetting" /> class.</returns>
-        public static ConnectionSetting Create(string name, ProjectSetting projectSetting, BuildSetting buildSetting, string token)
+        public static ConnectionSetting Create(string name, string token)
         {
-            var connection = new ConnectionSetting(Guid.NewGuid(), name, projectSetting, buildSetting, token);
+            var connectionSetting = new ConnectionSetting(Guid.NewGuid(), name, ProjectSetting.Create(), BuildSetting.Create(), token);
 
-            MessageBus.Publish(new ConnectionSettingCreated(connection));
+            MessageBus.Publish(new ConnectionSettingCreated(connectionSetting));
 
-            return connection;
+            return connectionSetting;
         }
 
         /// <summary>

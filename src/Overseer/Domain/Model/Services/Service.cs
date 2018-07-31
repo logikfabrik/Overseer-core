@@ -11,7 +11,7 @@ namespace Overseer.Domain.Model.Services
     /// <summary>
     /// Base class for CI/CD services.
     /// </summary>
-    /// <remarks>This class has intentionally been made public and abstract.</remarks>
+    /// <remarks>This class has intentionally been made public.</remarks>
     // ReSharper disable once InheritdocConsiderUsage
     public abstract class Service : IAggregateRoot<Guid>
     {

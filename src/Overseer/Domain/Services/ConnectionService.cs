@@ -5,12 +5,27 @@
 namespace Overseer.Domain.Services
 {
     using System;
+    using EnsureThat;
     using Model.Connections;
+    using Model.ConnectionSettings;
 
     internal sealed class ConnectionService : IConnectionService
     {
+        private readonly IConnectionSettingRepository _connectionSettingRepository;
+
+        public ConnectionService(IConnectionSettingRepository connectionSettingRepository)
+        {
+            EnsureArg.IsNotNull(connectionSettingRepository);
+
+            _connectionSettingRepository = connectionSettingRepository;
+        }
+
         public void Connect(Connection connection)
         {
+            EnsureArg.IsNotNull(connection);
+
+            var connectionSetting = _connectionSettingRepository.Get(connection.ConnectionSettingId);
+
             throw new NotImplementedException();
         }
 

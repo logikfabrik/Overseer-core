@@ -4,7 +4,6 @@
 
 namespace Overseer.Desktop.Service.AppVeyor.ViewModels
 {
-    using Domain.Model.ConnectionSettings;
     using ReactiveUI;
 
     /// <summary>
@@ -26,7 +25,7 @@ namespace Overseer.Desktop.Service.AppVeyor.ViewModels
         /// <inheritdoc />
         protected override void Create()
         {
-            Overseer.Service.AppVeyor.Domain.Model.ConnectionSettings.ConnectionSetting.Create(Name, ProjectSetting.Create(), BuildSetting.Create(), Token);
+            Overseer.Service.AppVeyor.Domain.Model.ConnectionSettings.ConnectionSetting.Create(Name, Token);
         }
     }
 }
