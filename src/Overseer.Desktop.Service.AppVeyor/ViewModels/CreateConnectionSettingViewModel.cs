@@ -26,7 +26,7 @@ namespace Overseer.Desktop.Service.AppVeyor.ViewModels
         /// <inheritdoc />
         protected override void Create()
         {
-            Overseer.Service.AppVeyor.Domain.Model.ConnectionSettings.ConnectionSetting.Create(Name, ProjectSetting.Create(FilterBy), BuildSetting.Create(Take), Token);
+            Overseer.Service.AppVeyor.Domain.Model.ConnectionSettings.ConnectionSetting.Create(Name, ProjectSetting.Create(), BuildSetting.Create(), Token);
         }
     }
 }

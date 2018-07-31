@@ -46,6 +46,15 @@ namespace Overseer.Domain.Model.ConnectionSettings
             return new ProjectSetting(filterBy);
         }
 
+        /// <summary>
+        /// Creates a new instance of the <see cref="ProjectSetting" /> class.
+        /// </summary>
+        /// <returns>A new instance of the <see cref="ProjectSetting" /> class.</returns>
+        public static ProjectSetting Create()
+        {
+            return Create(new string[] { });
+        }
+
         /// <inheritdoc />
         public override bool Equals(object obj)
         {

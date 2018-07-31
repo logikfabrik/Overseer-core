@@ -42,6 +42,15 @@ namespace Overseer.Domain.Model.ConnectionSettings
             return new BuildSetting(take);
         }
 
+        /// <summary>
+        /// Creates a new instance of the <see cref="BuildSetting" /> class.
+        /// </summary>
+        /// <returns>A new instance of the <see cref="BuildSetting" /> class.</returns>
+        public static BuildSetting Create()
+        {
+            return Create(5);
+        }
+
         /// <inheritdoc />
         public override bool Equals(object obj)
         {
