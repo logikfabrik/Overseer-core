@@ -5,7 +5,7 @@
 namespace Overseer.Domain.Model.Builds
 {
     /// <summary>
-    /// A build status.
+    /// Build status.
     /// </summary>
     public enum BuildStatus
     {

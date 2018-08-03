@@ -26,6 +26,7 @@ namespace Overseer.Domain.Model.Connections
 
             Id = id;
             ConnectionSettingId = connectionSettingId;
+            Status = ConnectionStatus.Pending;
         }
 
         /// <inheritdoc />
@@ -40,6 +41,14 @@ namespace Overseer.Domain.Model.Connections
         public Guid ConnectionSettingId { get; }
 
         /// <summary>
+        /// Gets the status.
+        /// </summary>
+        /// <value>
+        /// The status.
+        /// </value>
+        public ConnectionStatus Status { get; private set; }
+
+        /// <summary>
         /// Creates a new instance of the <see cref="Connection" /> class.
         /// </summary>
         /// <param name="connectionSettingId">The connection setting identifier.</param>
@@ -51,6 +60,13 @@ namespace Overseer.Domain.Model.Connections
             MessageBus.Publish(new ConnectionCreated(connection));
 
             return connection;
+        }
+
+        public void ChangeStatus(ConnectionStatus status)
+        {
+            Status = status;
+
+            MessageBus.Publish(new ConnectionStatusChanged(this));
         }
 
         /// <inheritdoc />

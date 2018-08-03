@@ -16,9 +16,9 @@ namespace Overseer.Framework.IO
         string Read();
 
         /// <summary>
-        /// Writes the specified file text to the file.
+        /// Writes the specified text to the file.
         /// </summary>
-        /// <param name="text">The file text to write.</param>
+        /// <param name="text">The text to write.</param>
         void Write(string text);
     }
 }

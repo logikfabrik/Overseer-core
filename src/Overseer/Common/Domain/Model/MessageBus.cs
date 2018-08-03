@@ -10,7 +10,7 @@ namespace Overseer.Common.Domain.Model
     using EnsureThat;
 
     /// <summary>
-    /// 
+    /// Message bus for domain messages.
     /// </summary>
     /// <remarks>This class has intentionally been made public.</remarks>
     public static class MessageBus

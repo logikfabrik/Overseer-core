@@ -52,7 +52,7 @@ namespace Overseer.Domain.Model.ConnectionSettings
         /// <returns>A new instance of the <see cref="ProjectSetting" /> class.</returns>
         public static ProjectSetting Create()
         {
-            return Create(new string[] { });
+            return Create(Enumerable.Empty<string>());
         }
 
         /// <inheritdoc />
