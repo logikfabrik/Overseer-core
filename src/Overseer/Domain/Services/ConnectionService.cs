@@ -2,14 +2,13 @@
 // Copyright (c) anton(at)logikfabrik.se. Licensed under the MIT license.
 // </copyright>
 
-using Overseer.Common.Infrastructure;
-
 namespace Overseer.Domain.Services
 {
     using System;
     using EnsureThat;
     using Model.Connections;
     using Model.ConnectionSettings;
+    using Infrastructure;
 
     internal sealed class ConnectionService : IConnectionService
     {

@@ -5,15 +5,19 @@ VisualStudioVersion = 15.0.27703.2018
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Overseer", "Overseer\Overseer.csproj", "{2A369713-DDB8-46DC-A2B0-04EDAAE3C7C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Overseer.Desktop", "Overseer.Desktop\Overseer.Desktop.csproj", "{D5B7526F-9D5A-4B36-9A69-A3D6A2F88D7C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Overseer.Desktop", "Overseer.Desktop\Overseer.Desktop.csproj", "{D5B7526F-9D5A-4B36-9A69-A3D6A2F88D7C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Overseer.Desktop.Common", "Overseer.Desktop.Common\Overseer.Desktop.Common.csproj", "{CC313233-4D76-44FB-9EA6-7E4A5769BE2A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Overseer.Desktop.Common", "Overseer.Desktop.Common\Overseer.Desktop.Common.csproj", "{CC313233-4D76-44FB-9EA6-7E4A5769BE2A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Overseer.Desktop.Service.AppVeyor", "Overseer.Desktop.Service.AppVeyor\Overseer.Desktop.Service.AppVeyor.csproj", "{99911F51-ED6F-42A1-AE9C-0781CB1E5610}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Overseer.Desktop.Service.AppVeyor", "Overseer.Desktop.Service.AppVeyor\Overseer.Desktop.Service.AppVeyor.csproj", "{99911F51-ED6F-42A1-AE9C-0781CB1E5610}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Overseer.Service.AppVeyor", "Overseer.Service.AppVeyor\Overseer.Service.AppVeyor.csproj", "{D3FABABD-B238-4300-936A-018C2D968571}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Overseer.Service.AppVeyor", "Overseer.Service.AppVeyor\Overseer.Service.AppVeyor.csproj", "{D3FABABD-B238-4300-936A-018C2D968571}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Overseer.Desktop.Framework", "Overseer.Desktop.Framework\Overseer.Desktop.Framework.csproj", "{D7CE0768-96D1-4D26-8896-650CBB0FC74F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Overseer.Desktop.Framework", "Overseer.Desktop.Framework\Overseer.Desktop.Framework.csproj", "{D7CE0768-96D1-4D26-8896-650CBB0FC74F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Overseer.Service.TravisCI", "Overseer.Service.TravisCI\Overseer.Service.TravisCI.csproj", "{06519FC3-12BA-44C8-BB7E-CD6A267B392C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Overseer.Desktop.Service.TravisCI", "Overseer.Desktop.Service.TravisCI\Overseer.Desktop.Service.TravisCI.csproj", "{26D532BA-1D3F-4ABB-9AF7-6F7C684B01B7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +49,14 @@ Global
 		{D7CE0768-96D1-4D26-8896-650CBB0FC74F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D7CE0768-96D1-4D26-8896-650CBB0FC74F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D7CE0768-96D1-4D26-8896-650CBB0FC74F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06519FC3-12BA-44C8-BB7E-CD6A267B392C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06519FC3-12BA-44C8-BB7E-CD6A267B392C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06519FC3-12BA-44C8-BB7E-CD6A267B392C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06519FC3-12BA-44C8-BB7E-CD6A267B392C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26D532BA-1D3F-4ABB-9AF7-6F7C684B01B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26D532BA-1D3F-4ABB-9AF7-6F7C684B01B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26D532BA-1D3F-4ABB-9AF7-6F7C684B01B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26D532BA-1D3F-4ABB-9AF7-6F7C684B01B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

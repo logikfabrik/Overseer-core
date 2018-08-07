@@ -2,9 +2,10 @@
 // Copyright (c) anton(at)logikfabrik.se. Licensed under the MIT license.
 // </copyright>
 
-namespace Overseer.Common.Infrastructure
+namespace Overseer.Infrastructure
 {
-    using Overseer.Domain.Model.ConnectionSettings;
+    using Domain.Model.ConnectionSettings;
+    using Overseer.Common.Infrastructure;
 
     internal interface IServiceProviderFactory
     {

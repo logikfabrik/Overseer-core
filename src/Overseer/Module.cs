@@ -58,7 +58,7 @@ namespace Overseer
             Bind<IConnectionService>().To<ConnectionService>();
 
             // Bind infrastructure factories.
-            Bind<IServiceProviderFactory>().ToFactory();
+            Bind<IServiceProviderFactory>().ToFactory(() => new ServiceProviderFactoryInstanceProvider());
 
             Bind<IBootstrapper>().To<Bootstrapper>();
         }
