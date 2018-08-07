@@ -14,7 +14,7 @@ namespace Overseer.Desktop.Framework
         where T : IReactiveObject
     {
         /// <summary>
-        /// Creates a conductor message.
+        /// Creates a conductor message. A new instance of the type of object to activate will be created.
         /// </summary>
         /// <returns>A conductor message.</returns>
         ConductorMessage<T> Create();

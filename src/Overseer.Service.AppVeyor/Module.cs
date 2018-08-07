@@ -22,6 +22,7 @@ namespace Overseer.Service.AppVeyor
             Bind<IBootstrapper>().To<Bootstrapper>();
             Bind<IConnectionSettingDtoFactory>().To<ConnectionSettingDtoFactory>();
             Bind<IConnectionSettingFactory>().To<ConnectionSettingFactory>();
+            Bind<IServiceProvider>().To<ServiceProvider>();
         }
     }
 }

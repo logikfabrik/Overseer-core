@@ -2,6 +2,8 @@
 // Copyright (c) anton(at)logikfabrik.se. Licensed under the MIT license.
 // </copyright>
 
+using Overseer.Common.Infrastructure;
+
 namespace Overseer.Domain.Services
 {
     using System;
@@ -12,12 +14,15 @@ namespace Overseer.Domain.Services
     internal sealed class ConnectionService : IConnectionService
     {
         private readonly IConnectionSettingRepository _connectionSettingRepository;
+        private readonly IServiceProviderFactory _serviceProviderFactory;
 
-        public ConnectionService(IConnectionSettingRepository connectionSettingRepository)
+        public ConnectionService(IConnectionSettingRepository connectionSettingRepository, IServiceProviderFactory serviceProviderFactory)
         {
             EnsureArg.IsNotNull(connectionSettingRepository);
+            EnsureArg.IsNotNull(serviceProviderFactory);
 
             _connectionSettingRepository = connectionSettingRepository;
+            _serviceProviderFactory = serviceProviderFactory;
         }
 
         public void Connect(Connection connection)
@@ -27,6 +32,8 @@ namespace Overseer.Domain.Services
             var connectionSetting = _connectionSettingRepository.Get(connection.ConnectionSettingId);
 
             connection.ChangeStatus(ConnectionStatus.Failed);
+
+            var serviceProvider = _serviceProviderFactory.Create(connectionSetting);
 
             throw new NotImplementedException();
         }

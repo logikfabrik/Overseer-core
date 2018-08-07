@@ -10,6 +10,9 @@ namespace Overseer.Common.Infrastructure
     using Overseer.Domain.Model.Builds;
     using Overseer.Domain.Model.Projects;
 
+    /// <summary>
+    /// Represents a service provider for querying a CI/CD service for projects and builds.
+    /// </summary>
     public interface IServiceProvider
     {
         Task<IEnumerable<Project>> GetProjectsAsync(CancellationToken cancellationToken);

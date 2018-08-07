@@ -41,7 +41,7 @@ namespace Overseer
             Bind<IProjectRepository>().To<ProjectRepository>().InSingletonScope();
             Bind<IServiceRepository>().To<ServiceRepository>().InSingletonScope();
 
-            // Bind factories for doman model handles and services.
+            // Bind factories for domain model handles.
             Bind<IHandleFactory<BuildCreatedHandle, BuildCreated>>().ToFactory();
             Bind<IHandleFactory<ConnectionAddedHandle, ConnectionAdded>>().ToFactory();
             Bind<IHandleFactory<ConnectionCreatedHandle, ConnectionCreated>>().ToFactory();
@@ -54,7 +54,11 @@ namespace Overseer
             Bind<IHandleFactory<ConnectionSettingCreatedHandle, ConnectionSettingCreated>>().ToFactory();
             Bind<IHandleFactory<ProjectCreatedHandle, ProjectCreated>>().ToFactory();
 
+            // Bind domain model services.
             Bind<IConnectionService>().To<ConnectionService>();
+
+            // Bind infrastructure factories.
+            Bind<IServiceProviderFactory>().ToFactory();
 
             Bind<IBootstrapper>().To<Bootstrapper>();
         }
