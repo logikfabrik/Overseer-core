@@ -26,8 +26,6 @@ namespace Overseer.Service.TravisCI.Infrastructure
         public ServiceProvider(ConnectionSetting connectionSetting)
         {
             EnsureArg.IsNotNull(connectionSetting);
-
-
         }
 
         /// <inheritdoc />

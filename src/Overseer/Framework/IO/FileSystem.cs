@@ -5,6 +5,7 @@
 namespace Overseer.Framework.IO
 {
     using System.IO;
+    using System.Text;
 
     /// <inheritdoc />
     public class FileSystem : IFileSystem
@@ -18,13 +19,13 @@ namespace Overseer.Framework.IO
         /// <inheritdoc />
         public string ReadFileText(string path)
         {
-            return File.ReadAllText(path);
+            return File.ReadAllText(path, Encoding.UTF8);
         }
 
         /// <inheritdoc />
         public void WriteFileText(string path, string text)
         {
-            File.WriteAllText(path, text);
+            File.WriteAllText(path, text, Encoding.UTF8);
         }
 
         /// <inheritdoc />

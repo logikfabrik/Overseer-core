@@ -6,9 +6,9 @@ namespace Overseer.Domain.Services
 {
     using System;
     using EnsureThat;
+    using Infrastructure;
     using Model.Connections;
     using Model.ConnectionSettings;
-    using Infrastructure;
 
     internal sealed class ConnectionService : IConnectionService
     {

@@ -20,9 +20,6 @@ namespace Overseer.Service.AppVeyor
         public override void Load()
         {
             Bind<IBootstrapper>().To<Bootstrapper>();
-            Bind<IConnectionSettingDtoFactory>().To<ConnectionSettingDtoFactory>();
-            Bind<IConnectionSettingFactory>().To<ConnectionSettingFactory>();
-            Bind<IServiceProvider>().To<ServiceProvider>();
         }
     }
 }

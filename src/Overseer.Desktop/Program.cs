@@ -48,15 +48,12 @@ namespace Overseer.Desktop
 
             kernel.Load("Overseer*.dll");
 
-
-
             kernel.Bind<IMessageBus>().ToConstant(MessageBus.Current);
             kernel.Bind<IConductorMessageFactory<ViewDashboardViewModel>>().ToFactory();
             kernel.Bind<IConductorMessageFactory<ViewConnectionsViewModel>>().ToFactory();
             kernel.Bind<IConductorMessageFactory<SelectServiceViewModel>>().ToFactory();
             kernel.Bind<IConductorMessageFactory<UpdateSettingsViewModel>>().ToFactory();
             kernel.Bind<IConductorMessageFactory<ViewAboutViewModel>>().ToFactory();
-
 
             return new FuncDependencyResolver(
                 (service, contract) => contract != null ? kernel.GetAll(service, contract) : kernel.GetAll(service),

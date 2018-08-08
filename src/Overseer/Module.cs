@@ -57,8 +57,10 @@ namespace Overseer
             // Bind domain model services.
             Bind<IConnectionService>().To<ConnectionService>();
 
-            // Bind infrastructure factories.
-            Bind<IServiceProviderFactory>().ToFactory(() => new ServiceProviderFactoryInstanceProvider());
+            // Bind infrastructure factories and strategies.
+            Bind<IServiceProviderFactory>().ToFactory(() => new AssemblyConstraintInstanceProvider());
+            Bind<IToConnectionSettingDtoMapperStrategy>().ToFactory(() => new AssemblyConstraintInstanceProvider());
+            Bind<IToConnectionSettingMapperStrategy>().ToFactory(() => new AssemblyConstraintInstanceProvider());
 
             Bind<IBootstrapper>().To<Bootstrapper>();
         }

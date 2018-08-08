@@ -5,10 +5,8 @@
 namespace Overseer.Service.TravisCI
 {
     using Domain;
-    using Infrastructure;
     using Ninject.Modules;
     using Overseer.Common.Domain;
-    using Overseer.Common.Infrastructure;
 
     /// <summary>
     /// Module that defines AppVeyor specific bindings.
@@ -20,7 +18,6 @@ namespace Overseer.Service.TravisCI
         public override void Load()
         {
             Bind<IBootstrapper>().To<Bootstrapper>();
-            Bind<IServiceProvider>().To<ServiceProvider>();
         }
     }
 }
