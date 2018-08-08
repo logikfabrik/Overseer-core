@@ -59,8 +59,8 @@ namespace Overseer
 
             // Bind infrastructure factories and strategies.
             Bind<IServiceProviderFactory>().ToFactory(() => new AssemblyConstraintInstanceProvider());
-            Bind<IToConnectionSettingDtoMapperStrategy>().ToFactory(() => new AssemblyConstraintInstanceProvider());
-            Bind<IToConnectionSettingMapperStrategy>().ToFactory(() => new AssemblyConstraintInstanceProvider());
+            Bind<IToConnectionSettingDtoMapperFactory>().ToFactory(() => new AssemblyConstraintInstanceProvider());
+            Bind<IToConnectionSettingMapperFactory>().ToFactory(() => new AssemblyConstraintInstanceProvider());
 
             Bind<IBootstrapper>().To<Bootstrapper>();
         }

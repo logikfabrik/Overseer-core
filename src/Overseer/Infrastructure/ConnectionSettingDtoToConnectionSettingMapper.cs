@@ -10,20 +10,20 @@ namespace Overseer.Infrastructure
 
     internal sealed class ConnectionSettingDtoToConnectionSettingMapper
     {
-        private readonly IToConnectionSettingMapperStrategy _connectionSettingMapperStrategy;
+        private readonly IToConnectionSettingMapperFactory _connectionSettingMapperFactory;
 
-        public ConnectionSettingDtoToConnectionSettingMapper(IToConnectionSettingMapperStrategy connectionSettingMapperStrategy)
+        public ConnectionSettingDtoToConnectionSettingMapper(IToConnectionSettingMapperFactory connectionSettingMapperFactory)
         {
-            EnsureArg.IsNotNull(connectionSettingMapperStrategy);
+            EnsureArg.IsNotNull(connectionSettingMapperFactory);
 
-            _connectionSettingMapperStrategy = connectionSettingMapperStrategy;
+            _connectionSettingMapperFactory = connectionSettingMapperFactory;
         }
 
         public ConnectionSetting Map(ConnectionSettingDto connectionSettingDto)
         {
             EnsureArg.IsNotNull(connectionSettingDto);
 
-            var mapper = _connectionSettingMapperStrategy.Create(connectionSettingDto);
+            var mapper = _connectionSettingMapperFactory.Create(connectionSettingDto);
 
             return mapper.Map();
         }

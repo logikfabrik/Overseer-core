@@ -7,8 +7,11 @@ namespace Overseer.Infrastructure
     using Domain.Model.ConnectionSettings;
     using Overseer.Common.Infrastructure;
 
+    /// <summary>
+    /// Represents a factory for creating service providers.
+    /// </summary>
     internal interface IServiceProviderFactory
     {
-        IServiceProvider Create(ConnectionSetting connectionSetting);
+        ServiceProvider Create(ConnectionSetting connectionSetting);
     }
 }
