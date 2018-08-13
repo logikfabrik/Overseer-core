@@ -30,11 +30,11 @@ namespace Overseer.Infrastructure
             return xml == null ? new ConnectionSettingDto[] { } : _xmlSerializer.Deserialize(xml);
         }
 
-        public void Write(ConnectionSettingDto[] settings)
+        public void Write(ConnectionSettingDto[] connectionSettings)
         {
-            Ensure.That(settings).IsNotNull();
+            Ensure.That(connectionSettings).IsNotNull();
 
-            var xml = _xmlSerializer.Serialize(settings);
+            var xml = _xmlSerializer.Serialize(connectionSettings);
 
             _textFile.Write(xml);
         }

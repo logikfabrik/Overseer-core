@@ -9,7 +9,11 @@ namespace Overseer.Infrastructure
     using System.Reflection;
     using Ninject.Extensions.Factory;
 
-    internal class AssemblyConstraintInstanceProvider : StandardInstanceProvider
+    /// <summary>
+    /// An instance provider constrained to creating instances within the same assembly as its specified argument.
+    /// </summary>
+    // ReSharper disable once InheritdocConsiderUsage
+    internal sealed class AssemblyConstraintInstanceProvider : StandardInstanceProvider
     {
         /// <inheritdoc />
         protected override Type GetType(MethodInfo methodInfo, object[] arguments)
