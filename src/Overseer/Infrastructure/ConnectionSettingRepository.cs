@@ -9,6 +9,7 @@ namespace Overseer.Infrastructure
     using System.Linq;
     using Domain.Model.ConnectionSettings;
     using EnsureThat;
+    using Overseer.Common.Infrastructure;
 
     /// <inheritdoc cref="IConnectionSettingRepository" />
     internal sealed class ConnectionSettingRepository : IConnectionSettingRepository
@@ -56,11 +57,34 @@ namespace Overseer.Infrastructure
         public void Add(ConnectionSetting entity)
         {
             _connectionSettings.Add(entity);
+
+            Save();
         }
 
         public void Remove(Guid identifier)
         {
             _connectionSettings.RemoveWhere(connectionSetting => connectionSetting.Id == identifier);
+        }
+
+        private void Load()
+        {
+
+        }
+
+        private void Save()
+        {
+            var connectionSettingDtos = new HashSet<ConnectionSettingDto>();
+
+            foreach (var connectionSetting in _connectionSettings)
+            {
+                var mapper = _toConnectionSettingDtoMapperFactory.Create(connectionSetting);
+
+                var connectionSettingDto = mapper.Map();
+
+                connectionSettingDtos.Add(connectionSettingDto);
+            }
+
+            _connectionSettingDtoFile.Write(connectionSettingDtos.ToArray());
         }
     }
 }

@@ -34,7 +34,7 @@ namespace Overseer.Domain.Model.ConnectionSettings
         /// <value>
         /// The CI/CD project identifiers to filter by.
         /// </value>
-        public IEnumerable<string> FilterBy { get; }
+        public string[] FilterBy { get; }
 
         /// <summary>
         /// Creates a new instance of the <see cref="ProjectSetting" /> class.

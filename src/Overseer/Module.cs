@@ -12,13 +12,11 @@ namespace Overseer
     using Domain.Model.Services;
     using Domain.Services;
     using Framework.IO;
-    using Framework.Xml.Serialization;
     using Infrastructure;
     using Ninject.Extensions.Factory;
     using Ninject.Modules;
     using Overseer.Common.Domain;
     using Overseer.Common.Domain.Model;
-    using Overseer.Common.Infrastructure;
 
     /// <summary>
     /// Module that defines bindings.
@@ -30,14 +28,14 @@ namespace Overseer
         public override void Load()
         {
             // Bind framework classes.
-            Bind<IFileSystem>().To<FileSystem>();
-
-            Bind<XmlSerializer<ConnectionSettingDto>>().ToProvider<ConnectionSettingDtoXmlSerializerProvider>();
+            Bind<IOSDirectory>().To<OSDirectory>();
+            Bind<IOSFile>().To<OSFile>();
+            Bind<IOSFileSystem>().To<OSFileSystem>();
 
             // Bind domain model repositories.
             Bind<IBuildRepository>().To<BuildRepository>().InSingletonScope();
             Bind<IConnectionRepository>().To<ConnectionRepository>().InSingletonScope();
-            Bind<IConnectionSettingRepository>().To<ConnectionSettingRepository>().InSingletonScope();
+            Bind<IConnectionSettingRepository>().ToProvider<ConnectionSettingRepositoryProvider>().InSingletonScope();
             Bind<IProjectRepository>().To<ProjectRepository>().InSingletonScope();
             Bind<IServiceRepository>().To<ServiceRepository>().InSingletonScope();
 
