@@ -9,7 +9,7 @@ namespace Overseer.Infrastructure
     using Framework.Xml.Serialization;
     using Overseer.Common.Infrastructure;
 
-    public class ConnectionSettingDtoXmlSerializer : XmlSerializer<ConnectionSettingDto[]>
+    internal sealed class ConnectionSettingDtoXmlSerializer : XmlSerializer<ConnectionSettingDto[]>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ConnectionSettingDtoXmlSerializer" /> class.

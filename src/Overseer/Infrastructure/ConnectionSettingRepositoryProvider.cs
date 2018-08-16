@@ -13,6 +13,7 @@ namespace Overseer.Infrastructure
 
     internal sealed class ConnectionSettingRepositoryProvider : Provider<IConnectionSettingRepository>
     {
+        /// <inheritdoc />
         protected override IConnectionSettingRepository CreateInstance(IContext context)
         {
             var connectionSettingDtoFile = new ConnectionSettingDtoFile(new ConnectionSettingDtoXmlSerializer(AppDomain.CurrentDomain), new Aes256EncryptedUTF8TextFile(context.Kernel.Get<IOSFileSystem>(), "ConnectionSettings.xml", new byte[] { 1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8 }));

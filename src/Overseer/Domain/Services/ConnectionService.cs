@@ -30,9 +30,9 @@ namespace Overseer.Domain.Services
 
             var connectionSetting = _connectionSettingRepository.Get(connection.ConnectionSettingId);
 
-            connection.ChangeStatus(ConnectionStatus.Failed);
-
             var serviceProvider = _serviceProviderFactory.Create(connectionSetting);
+
+            connection.ChangeStatus(ConnectionStatus.Failed);
 
             throw new NotImplementedException();
         }

@@ -12,6 +12,11 @@ namespace Overseer.Infrastructure
     /// </summary>
     internal interface IServiceProviderFactory
     {
+        /// <summary>
+        /// Creates a service provider using the specified connection setting.
+        /// </summary>
+        /// <param name="connectionSetting">The connection setting.</param>
+        /// <returns>A service provider.</returns>
         ServiceProvider Create(ConnectionSetting connectionSetting);
     }
 }

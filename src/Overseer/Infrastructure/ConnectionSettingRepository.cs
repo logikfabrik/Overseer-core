@@ -73,7 +73,7 @@ namespace Overseer.Infrastructure
 
         private void Save()
         {
-            var connectionSettingDtos = new HashSet<ConnectionSettingDto>();
+            var connectionSettings = new HashSet<ConnectionSettingDto>();
 
             foreach (var connectionSetting in _connectionSettings)
             {
@@ -81,10 +81,10 @@ namespace Overseer.Infrastructure
 
                 var connectionSettingDto = mapper.Map();
 
-                connectionSettingDtos.Add(connectionSettingDto);
+                connectionSettings.Add(connectionSettingDto);
             }
 
-            _connectionSettingDtoFile.Write(connectionSettingDtos.ToArray());
+            _connectionSettingDtoFile.Write(connectionSettings.ToArray());
         }
     }
 }
