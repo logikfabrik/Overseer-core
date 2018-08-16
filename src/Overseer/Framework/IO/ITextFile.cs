@@ -10,9 +10,9 @@ namespace Overseer.Framework.IO
     public interface ITextFile
     {
         /// <summary>
-        /// Reads the file text.
+        /// Reads the text from the file.
         /// </summary>
-        /// <returns>The file text.</returns>
+        /// <returns>The read text.</returns>
         string Read();
 
         /// <summary>

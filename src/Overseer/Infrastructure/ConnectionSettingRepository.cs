@@ -14,13 +14,13 @@ namespace Overseer.Infrastructure
     /// <inheritdoc cref="IConnectionSettingRepository" />
     internal sealed class ConnectionSettingRepository : IConnectionSettingRepository
     {
-        private readonly ConnectionSettingDtoFile _connectionSettingDtoFile;
+        private readonly IConnectionSettingDtoFile _connectionSettingDtoFile;
         private readonly IToConnectionSettingDtoMapperFactory _toConnectionSettingDtoMapperFactory;
         private readonly IToConnectionSettingMapperFactory _toConnectionSettingMapperFactory;
         private readonly HashSet<ConnectionSetting> _connectionSettings;
 
         public ConnectionSettingRepository(
-            ConnectionSettingDtoFile connectionSettingDtoFile,
+            IConnectionSettingDtoFile connectionSettingDtoFile,
             IToConnectionSettingDtoMapperFactory toConnectionSettingDtoMapperFactory,
             IToConnectionSettingMapperFactory toConnectionSettingMapperFactory)
         {

@@ -16,7 +16,7 @@ namespace Overseer.Infrastructure
         /// <inheritdoc />
         protected override IConnectionSettingRepository CreateInstance(IContext context)
         {
-            var connectionSettingDtoFile = new ConnectionSettingDtoFile(new ConnectionSettingDtoXmlSerializer(AppDomain.CurrentDomain), new Aes256EncryptedUTF8TextFile(context.Kernel.Get<IOSFileSystem>(), "ConnectionSettings.xml", new byte[] { 1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8 }));
+            var connectionSettingDtoFile = new ConnectionSettingDtoXmlFile(new ConnectionSettingDtoXmlSerializer(AppDomain.CurrentDomain), new Aes256EncryptedUTF8TextFile(context.Kernel.Get<IOSFileSystem>(), "ConnectionSettings.xml", new byte[] { 1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8 }));
             var toConnectionSettingDtoMapperFactory = context.Kernel.Get<IToConnectionSettingDtoMapperFactory>();
             var toConnectionSettingMapperFactory = context.Kernel.Get<IToConnectionSettingMapperFactory>();
 
