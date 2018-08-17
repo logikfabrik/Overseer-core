@@ -18,19 +18,19 @@ namespace Overseer.Framework.IO
         bool Exists(string path);
 
         /// <summary>
-        /// Opens a file, reads the UTF-8 encoded text from the file, and then closes the file.
+        /// Opens a file, reads the UTF-8 encoded data from the file, and then closes the file.
         /// </summary>
         /// <param name="path">The file path.</param>
-        /// <returns>The text.</returns>
+        /// <returns>The data.</returns>
         // ReSharper disable once InconsistentNaming
         string ReadUTF8(string path);
 
         /// <summary>
-        /// Creates a file, writes the UTF-8 encoded text to the file, and then closes the file. If the file already exists, it is overwritten.
+        /// Creates a file, writes the UTF-8 encoded data to the file, and then closes the file. If the file already exists, it is overwritten.
         /// </summary>
         /// <param name="path">The file path.</param>
-        /// <param name="text">The text.</param>
+        /// <param name="data">The data.</param>
         // ReSharper disable once InconsistentNaming
-        void WriteUTF8(string path, string text);
+        void WriteUTF8(string path, string data);
     }
 }

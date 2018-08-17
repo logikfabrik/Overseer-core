@@ -1,4 +1,4 @@
-﻿// <copyright file="Aes256EncryptedUTF8TextFile.cs" company="Logikfabrik">
+﻿// <copyright file="Aes256EncryptedUTF8File.cs" company="Logikfabrik">
 // Copyright (c) anton(at)logikfabrik.se. Licensed under the MIT license.
 // </copyright>
 
@@ -11,11 +11,11 @@ namespace Overseer.Framework.Security.Cryptography.IO
     using Overseer.Framework.IO;
 
     /// <summary>
-    /// An AES encrypted UTF-8 text file, using a 256 bit key and a 128 bit IV.
+    /// An AES encrypted UTF-8 file, using a 256 bit key and a 128 bit IV.
     /// </summary>
     // ReSharper disable once InheritdocConsiderUsage
     // ReSharper disable once InconsistentNaming
-    public class Aes256EncryptedUTF8TextFile : UTF8TextFile
+    public class Aes256EncryptedUTF8File : UTF8File
     {
         private const int KeySizeInBits = 256;
         private const int KeySizeInBytes = KeySizeInBits / 8;
@@ -29,13 +29,13 @@ namespace Overseer.Framework.Security.Cryptography.IO
         private readonly byte[] _key;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Aes256EncryptedUTF8TextFile" /> class.
+        /// Initializes a new instance of the <see cref="Aes256EncryptedUTF8File" /> class.
         /// </summary>
         /// <param name="osFileSystem">The OS file system.</param>
         /// <param name="path">The path to the file to read from and write to.</param>
         /// <param name="key">The secret 256 bit key for the AES algorithm.</param>
         // ReSharper disable once InheritdocConsiderUsage
-        public Aes256EncryptedUTF8TextFile(IOSFileSystem osFileSystem, string path, byte[] key)
+        public Aes256EncryptedUTF8File(IOSFileSystem osFileSystem, string path, byte[] key)
             : base(osFileSystem, path)
         {
             EnsureArg.IsNotNull(key);
@@ -49,22 +49,22 @@ namespace Overseer.Framework.Security.Cryptography.IO
         /// <inheritdoc />
         public override string Read()
         {
-            var encryptedText = base.Read();
+            var encryptedData = base.Read();
 
-            return Decrypt(encryptedText);
+            return Decrypt(encryptedData);
         }
 
         /// <inheritdoc />
-        public override void Write(string text)
+        public override void Write(string data)
         {
-            var encryptedText = Encrypt(text);
+            var encryptedData = Encrypt(data);
 
-            base.Write(encryptedText);
+            base.Write(encryptedData);
         }
 
-        private string Encrypt(string unencryptedText)
+        private string Encrypt(string unencryptedData)
         {
-            var data = unencryptedText != null ? Encoding.UTF8.GetBytes(unencryptedText) : new byte[] { };
+            var data = unencryptedData != null ? Encoding.UTF8.GetBytes(unencryptedData) : new byte[] { };
 
             var iv = Salt.Generate(IVInBytes);
 
@@ -84,9 +84,9 @@ namespace Overseer.Framework.Security.Cryptography.IO
             }
         }
 
-        private string Decrypt(string encryptedText)
+        private string Decrypt(string encryptedData)
         {
-            var data = encryptedText != null ? Convert.FromBase64String(encryptedText) : default(byte[]);
+            var data = encryptedData != null ? Convert.FromBase64String(encryptedData) : default(byte[]);
 
             if (data == null || data.Length < IVInBytes)
             {

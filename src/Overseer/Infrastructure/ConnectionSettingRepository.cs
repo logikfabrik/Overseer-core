@@ -9,32 +9,33 @@ namespace Overseer.Infrastructure
     using System.Linq;
     using Domain.Model.ConnectionSettings;
     using EnsureThat;
+    using Framework.IO;
     using Overseer.Common.Infrastructure;
 
     /// <inheritdoc cref="IConnectionSettingRepository" />
     internal sealed class ConnectionSettingRepository : IConnectionSettingRepository
     {
-        private readonly IConnectionSettingDtoFile _connectionSettingDtoFile;
+        private readonly IFile<ConnectionSettingDto[]> _file;
         private readonly IToConnectionSettingDtoMapperFactory _toConnectionSettingDtoMapperFactory;
         private readonly IToConnectionSettingMapperFactory _toConnectionSettingMapperFactory;
         private readonly HashSet<ConnectionSetting> _connectionSettings;
 
         public ConnectionSettingRepository(
-            IConnectionSettingDtoFile connectionSettingDtoFile,
+            IFile<ConnectionSettingDto[]> file,
             IToConnectionSettingDtoMapperFactory toConnectionSettingDtoMapperFactory,
             IToConnectionSettingMapperFactory toConnectionSettingMapperFactory)
         {
-            EnsureArg.IsNotNull(connectionSettingDtoFile);
+            EnsureArg.IsNotNull(file);
             EnsureArg.IsNotNull(toConnectionSettingDtoMapperFactory);
             EnsureArg.IsNotNull(toConnectionSettingMapperFactory);
 
-            _connectionSettingDtoFile = connectionSettingDtoFile;
+            _file = file;
             _toConnectionSettingDtoMapperFactory = toConnectionSettingDtoMapperFactory;
             _toConnectionSettingMapperFactory = toConnectionSettingMapperFactory;
 
             _connectionSettings = new HashSet<ConnectionSetting>();
 
-            foreach (var connectionSettingDto in _connectionSettingDtoFile.Read())
+            foreach (var connectionSettingDto in _file.Read())
             {
                 var mapper = _toConnectionSettingMapperFactory.Create(connectionSettingDto);
 
@@ -73,7 +74,7 @@ namespace Overseer.Infrastructure
 
         private void Save()
         {
-            var connectionSettings = new HashSet<ConnectionSettingDto>();
+            var connectionSettingDtos = new HashSet<ConnectionSettingDto>();
 
             foreach (var connectionSetting in _connectionSettings)
             {
@@ -81,10 +82,10 @@ namespace Overseer.Infrastructure
 
                 var connectionSettingDto = mapper.Map();
 
-                connectionSettings.Add(connectionSettingDto);
+                connectionSettingDtos.Add(connectionSettingDto);
             }
 
-            _connectionSettingDtoFile.Write(connectionSettings.ToArray());
+            _file.Write(connectionSettingDtos.ToArray());
         }
     }
 }

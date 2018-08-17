@@ -27,9 +27,9 @@ namespace Overseer.Framework.IO
         }
 
         /// <inheritdoc />
-        public void WriteUTF8(string path, string text)
+        public void WriteUTF8(string path, string data)
         {
-            File.WriteAllText(path, text, Encoding.UTF8);
+            File.WriteAllText(path, data, Encoding.UTF8);
         }
     }
 }

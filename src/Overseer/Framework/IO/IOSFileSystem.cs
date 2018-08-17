@@ -10,7 +10,7 @@ namespace Overseer.Framework.IO
     // ReSharper disable once InconsistentNaming
     public interface IOSFileSystem
     {
-        void WriteUTF8File(string path, string text);
+        void WriteUTF8File(string path, string data);
 
         string ReadUTF8File(string path);
     }

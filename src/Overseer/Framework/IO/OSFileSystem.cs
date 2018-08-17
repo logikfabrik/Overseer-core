@@ -32,7 +32,7 @@ namespace Overseer.Framework.IO
         }
 
         /// <inheritdoc />
-        public void WriteUTF8File(string path, string text)
+        public void WriteUTF8File(string path, string data)
         {
             if (!Path.IsPathRooted(path))
             {
@@ -41,7 +41,7 @@ namespace Overseer.Framework.IO
 
             _osDirectory.Create(Path.GetDirectoryName(path));
 
-            _osFile.WriteUTF8(path, text);
+            _osFile.WriteUTF8(path, data);
         }
 
         /// <inheritdoc />
