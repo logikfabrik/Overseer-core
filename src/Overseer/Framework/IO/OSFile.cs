@@ -4,7 +4,6 @@
 
 namespace Overseer.Framework.IO
 {
-    using System.IO;
     using System.Text;
 
     /// <summary>
@@ -17,19 +16,31 @@ namespace Overseer.Framework.IO
         /// <inheritdoc />
         public bool Exists(string path)
         {
-            return File.Exists(path);
+            return System.IO.File.Exists(path);
         }
 
         /// <inheritdoc />
         public string ReadUTF8(string path)
         {
-            return File.ReadAllText(path, Encoding.UTF8);
+            return System.IO.File.ReadAllText(path, Encoding.UTF8);
+        }
+
+        /// <inheritdoc />
+        public byte[] Read(string path)
+        {
+            return System.IO.File.ReadAllBytes(path);
         }
 
         /// <inheritdoc />
         public void WriteUTF8(string path, string data)
         {
-            File.WriteAllText(path, data, Encoding.UTF8);
+            System.IO.File.WriteAllText(path, data, Encoding.UTF8);
+        }
+
+        /// <inheritdoc />
+        public void Write(string path, byte[] data)
+        {
+            System.IO.File.WriteAllBytes(path, data);
         }
     }
 }

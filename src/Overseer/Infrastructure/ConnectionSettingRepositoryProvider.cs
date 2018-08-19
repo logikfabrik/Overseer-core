@@ -22,25 +22,30 @@ namespace Overseer.Infrastructure
         {
             var osFileSystem = context.Kernel.Get<IOSFileSystem>();
 
-            var passphrase = new Passphrase(new UTF8File(osFileSystem, "test"));
+            var passphraseFile = new File(osFileSystem, "Passphrase");
 
-            // var passphraseHash = passphrase.GetHash();
+            var passphraseHash = passphraseFile.Read();
 
-            var passphraseHash = new byte[] { 1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8 };
+            if (passphraseHash == null)
+            {
+                passphraseHash = PassphraseHash.Generate("Demo");
 
-            var file = new Aes256EncryptedUTF8File(osFileSystem, "ConnectionSettings.xml", passphraseHash);
+                passphraseFile.Write(passphraseHash);
+            }
+
+            var connectionSettingDtosFile = new Aes256EncryptedUTF8File(osFileSystem, "ConnectionSettings.xml", passphraseHash);
 
             var xmlSerializer = new XmlSerializer<ConnectionSettingDto[]>(AppDomain.CurrentDomain.GetAssemblies()
                 .SelectMany(assembly => assembly.GetTypes())
                 .Where(type => !type.IsAbstract && typeof(ConnectionSettingDto).IsAssignableFrom(type))
                 .ToArray());
 
-            var xmlFile = new XmlFile<ConnectionSettingDto>(xmlSerializer, file);
+            var connectionSettingsDtosXmlFile = new XmlFile<ConnectionSettingDto>(xmlSerializer, connectionSettingDtosFile);
 
             var toConnectionSettingDtoMapperFactory = context.Kernel.Get<IToConnectionSettingDtoMapperFactory>();
             var toConnectionSettingMapperFactory = context.Kernel.Get<IToConnectionSettingMapperFactory>();
 
-            return new ConnectionSettingRepository(xmlFile, toConnectionSettingDtoMapperFactory, toConnectionSettingMapperFactory);
+            return new ConnectionSettingRepository(connectionSettingsDtosXmlFile, toConnectionSettingDtoMapperFactory, toConnectionSettingMapperFactory);
         }
     }
 }

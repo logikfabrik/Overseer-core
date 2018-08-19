@@ -32,6 +32,28 @@ namespace Overseer.Framework.IO
         }
 
         /// <inheritdoc />
+        public string ReadUTF8File(string path)
+        {
+            if (!Path.IsPathRooted(path))
+            {
+                path = Path.Combine(_osDirectory.GetCurrent(), path);
+            }
+
+            return !_osFile.Exists(path) ? null : _osFile.ReadUTF8(path);
+        }
+
+        /// <inheritdoc />
+        public byte[] ReadFile(string path)
+        {
+            if (!Path.IsPathRooted(path))
+            {
+                path = Path.Combine(_osDirectory.GetCurrent(), path);
+            }
+
+            return !_osFile.Exists(path) ? null : _osFile.Read(path);
+        }
+
+        /// <inheritdoc />
         public void WriteUTF8File(string path, string data)
         {
             if (!Path.IsPathRooted(path))
@@ -45,14 +67,16 @@ namespace Overseer.Framework.IO
         }
 
         /// <inheritdoc />
-        public string ReadUTF8File(string path)
+        public void WriteFile(string path, byte[] data)
         {
             if (!Path.IsPathRooted(path))
             {
                 path = Path.Combine(_osDirectory.GetCurrent(), path);
             }
 
-            return !_osFile.Exists(path) ? null : _osFile.ReadUTF8(path);
+            _osDirectory.Create(Path.GetDirectoryName(path));
+
+            _osFile.Write(path, data);
         }
     }
 }

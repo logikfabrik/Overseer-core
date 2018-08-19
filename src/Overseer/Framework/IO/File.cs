@@ -1,4 +1,4 @@
-﻿// <copyright file="UTF8File.cs" company="Logikfabrik">
+﻿// <copyright file="File.cs" company="Logikfabrik">
 // Copyright (c) anton(at)logikfabrik.se. Licensed under the MIT license.
 // </copyright>
 
@@ -7,21 +7,20 @@ namespace Overseer.Framework.IO
     using EnsureThat;
 
     /// <summary>
-    /// An UTF-8 file for reading and writing.
+    /// A file for reading and writing.
     /// </summary>
     // ReSharper disable once InheritdocConsiderUsage
-    // ReSharper disable once InconsistentNaming
-    public class UTF8File : IFile<string>
+    public class File : IFile<byte[]>
     {
         private readonly IOSFileSystem _osFileSystem;
         private readonly string _path;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="UTF8File" /> class.
+        /// Initializes a new instance of the <see cref="File" /> class.
         /// </summary>
         /// <param name="osFileSystem">The OS file system.</param>
         /// <param name="path">The path to the file to read from and write to.</param>
-        public UTF8File(IOSFileSystem osFileSystem, string path)
+        public File(IOSFileSystem osFileSystem, string path)
         {
             EnsureArg.IsNotNull(osFileSystem);
             EnsureArg.IsNotNullOrEmpty(path);
@@ -31,15 +30,15 @@ namespace Overseer.Framework.IO
         }
 
         /// <inheritdoc />
-        public virtual string Read()
+        public byte[] Read()
         {
-            return _osFileSystem.ReadUTF8File(_path);
+            return _osFileSystem.ReadFile(_path);
         }
 
         /// <inheritdoc />
-        public virtual void Write(string data)
+        public void Write(byte[] data)
         {
-            _osFileSystem.WriteUTF8File(_path, data);
+            _osFileSystem.WriteFile(_path, data);
         }
     }
 }

@@ -21,7 +21,7 @@ namespace Overseer.Framework.Xml.Serialization.IO
         /// Initializes a new instance of the <see cref="XmlFile{T}" /> class.
         /// </summary>
         /// <param name="xmlSerializer">The XML serializer.</param>
-        /// <param name="file">The file.</param>
+        /// <param name="file">The file to read from and write to.</param>
         public XmlFile(XmlSerializer<T[]> xmlSerializer, IFile<string> file)
         {
             EnsureArg.IsNotNull(xmlSerializer);

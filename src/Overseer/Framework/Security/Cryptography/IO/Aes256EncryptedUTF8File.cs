@@ -11,7 +11,7 @@ namespace Overseer.Framework.Security.Cryptography.IO
     using Overseer.Framework.IO;
 
     /// <summary>
-    /// An AES encrypted UTF-8 file, using a 256 bit key and a 128 bit IV.
+    /// An AES encrypted UTF-8 file, using a 256 bit key and a 128 bit IV, for reading and writing.
     /// </summary>
     // ReSharper disable once InheritdocConsiderUsage
     // ReSharper disable once InconsistentNaming
@@ -39,7 +39,7 @@ namespace Overseer.Framework.Security.Cryptography.IO
             : base(osFileSystem, path)
         {
             EnsureArg.IsNotNull(key);
-            EnsureArg.Is(key.Length, KeySizeInBytes, nameof(key));
+            EnsureArg.SizeIs(key, KeySizeInBytes);
 
             _key = new byte[KeySizeInBytes];
 

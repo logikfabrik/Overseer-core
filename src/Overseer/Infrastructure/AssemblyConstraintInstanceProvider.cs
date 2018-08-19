@@ -10,7 +10,7 @@ namespace Overseer.Infrastructure
     using Ninject.Extensions.Factory;
 
     /// <summary>
-    /// An instance provider constrained to creating instances within the same assembly as its specified first argument.
+    /// An instance provider constrained to creating instances of types within the same assembly as its specified first argument.
     /// </summary>
     // ReSharper disable once InheritdocConsiderUsage
     internal sealed class AssemblyConstraintInstanceProvider : StandardInstanceProvider
